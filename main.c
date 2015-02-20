@@ -6,7 +6,7 @@
 /*   By: crenault <crenault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/20 21:22:50 by crenault          #+#    #+#             */
-/*   Updated: 2015/02/21 00:45:33 by crenault         ###   ########.fr       */
+/*   Updated: 2015/02/21 00:47:20 by crenault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,23 +94,27 @@ int				main(int argc, char const **argv)
 	// another another another line
 	t_list		*gradient_lst4;
 	gradient_lst4 = NULL;
-	add_gradient_color(	get_new_gradient(0, 0.25,
+	add_gradient_color(	get_new_gradient(0, 0.2,
 											get_new_color(255, 0, 0),
 											get_new_color(255, 255, 0)
 										),
 						&gradient_lst4);
-	add_gradient_color(	get_new_gradient(0.25, 0.5,
+	add_gradient_color(	get_new_gradient(0.2, 0.4,
 											get_new_color(255, 255, 0),
+											get_new_color(0, 255, 0)
+										),
+						&gradient_lst4);
+	add_gradient_color(	get_new_gradient(0.4, 0.6,
+											get_new_color(0, 255, 0),
 											get_new_color(0, 255, 255)
 										),
 						&gradient_lst4);
-	#pragma message("LOL: need green color !!!")
-	add_gradient_color(	get_new_gradient(0.5, 0.75,
+	add_gradient_color(	get_new_gradient(0.6, 0.8,
 											get_new_color(0, 255, 255),
 											get_new_color(0, 0, 255)
 										),
 						&gradient_lst4);
-	add_gradient_color(	get_new_gradient(0.75, 1,
+	add_gradient_color(	get_new_gradient(0.8, 1,
 											get_new_color(0, 0, 255),
 											get_new_color(255, 0, 255)
 										),
