@@ -6,7 +6,7 @@
 /*   By: crenault <crenault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/20 21:22:50 by crenault          #+#    #+#             */
-/*   Updated: 2015/02/21 00:30:16 by crenault         ###   ########.fr       */
+/*   Updated: 2015/02/21 00:43:10 by crenault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,7 @@ int				main(int argc, char const **argv)
 						&gradient_lst4);
 	add_gradient_color(	get_new_gradient(0.75, 1,
 											get_new_color(0, 0, 255),
-											get_new_color(255, 255, 255)
+											get_new_color(255, 0, 255)
 										),
 						&gradient_lst4);
 	draw_line_aa(	&image,
