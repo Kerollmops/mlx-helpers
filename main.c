@@ -6,7 +6,7 @@
 /*   By: crenault <crenault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/20 21:22:50 by crenault          #+#    #+#             */
-/*   Updated: 2015/02/21 00:43:10 by crenault         ###   ########.fr       */
+/*   Updated: 2015/02/21 00:45:33 by crenault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,7 @@ int				main(int argc, char const **argv)
 											get_new_color(0, 255, 255)
 										),
 						&gradient_lst4);
+	#pragma message("LOL: need green color !!!")
 	add_gradient_color(	get_new_gradient(0.5, 0.75,
 											get_new_color(0, 255, 255),
 											get_new_color(0, 0, 255)
