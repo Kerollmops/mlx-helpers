@@ -21,6 +21,7 @@ NAME = mlx_helpers
 SRC = 	main.c \
 		position/basics.c \
 		color/basics.c \
+		color/advanced.c \
 		image/basics.c \
 		line/basics.c
 

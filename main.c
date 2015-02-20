@@ -6,7 +6,7 @@
 /*   By: crenault <crenault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/20 21:22:50 by crenault          #+#    #+#             */
-/*   Updated: 2015/02/20 23:36:01 by crenault         ###   ########.fr       */
+/*   Updated: 2015/02/21 00:30:16 by crenault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,81 @@ int				main(int argc, char const **argv)
 
 	// put line unicolor
 	draw_line(	&image,
-				get_new_pos(0, 0), get_new_pos(99, 99),
+				get_new_pos(10, 10), get_new_pos(10, 70),
 				get_new_color(255, 255, 255));
+
+	// put line multicolor
+	t_list		*gradient_lst;
+	gradient_lst = NULL;
+	add_gradient_color(	get_new_gradient(0, 1,
+											get_new_color(0, 0, 0),
+											get_new_color(255, 255, 255)
+										),
+						&gradient_lst);
+	draw_line_aa(	&image,
+					get_new_pos(10 + 20, 10), get_new_pos(10 + 20, 70),
+					gradient_lst);
+
+	// another line
+	t_list		*gradient_lst2;
+	gradient_lst2 = NULL;
+	add_gradient_color(	get_new_gradient(0, 0.5,
+											get_new_color(0, 0, 0),
+											get_new_color(255, 255, 255)
+										),
+						&gradient_lst2);
+	add_gradient_color(	get_new_gradient(0.5, 1,
+											get_new_color(255, 255, 255),
+											get_new_color(0, 0, 0)
+										),
+						&gradient_lst2);
+	draw_line_aa(	&image,
+					get_new_pos(10 + 40, 10), get_new_pos(10 + 40, 70),
+					gradient_lst2);
+
+	// another another line
+	t_list		*gradient_lst3;
+	gradient_lst3 = NULL;
+	add_gradient_color(	get_new_gradient(0, 0.5,
+											get_new_color(255, 255, 255),
+											get_new_color(0, 0, 0)
+										),
+						&gradient_lst3);
+	add_gradient_color(	get_new_gradient(0.5, 1,
+											get_new_color(0, 0, 0),
+											get_new_color(255, 255, 255)
+										),
+						&gradient_lst3);
+	draw_line_aa(	&image,
+					get_new_pos(10 + 60, 10), get_new_pos(10 + 60, 70),
+					gradient_lst3);
+
+	// another another another line
+	t_list		*gradient_lst4;
+	gradient_lst4 = NULL;
+	add_gradient_color(	get_new_gradient(0, 0.25,
+											get_new_color(255, 0, 0),
+											get_new_color(255, 255, 0)
+										),
+						&gradient_lst4);
+	add_gradient_color(	get_new_gradient(0.25, 0.5,
+											get_new_color(255, 255, 0),
+											get_new_color(0, 255, 255)
+										),
+						&gradient_lst4);
+	add_gradient_color(	get_new_gradient(0.5, 0.75,
+											get_new_color(0, 255, 255),
+											get_new_color(0, 0, 255)
+										),
+						&gradient_lst4);
+	add_gradient_color(	get_new_gradient(0.75, 1,
+											get_new_color(0, 0, 255),
+											get_new_color(255, 255, 255)
+										),
+						&gradient_lst4);
+	draw_line_aa(	&image,
+					get_new_pos(10 + 80, 10), get_new_pos(10 + 80, 70),
+					gradient_lst4);
 
 	//
 	win = mlx_new_window(mlx, 100, 100, (char *)"salut");

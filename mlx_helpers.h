@@ -6,7 +6,7 @@
 /*   By: crenault <crenault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/20 21:23:30 by crenault          #+#    #+#             */
-/*   Updated: 2015/02/20 23:34:09 by crenault         ###   ########.fr       */
+/*   Updated: 2015/02/21 00:17:58 by crenault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@
 ** position/basics.c
 */
 t_pos			get_new_pos(int x, int y);
+double			get_pos_distance(t_pos a, t_pos b);
 
 /*
 **		COLOR
@@ -48,7 +49,7 @@ t_color			color_hexa(int hexa);
 t_color			get_scalar(t_color a, t_color b, double ratio);
 t_gradient		get_new_gradient(double min, double max, t_color start,
 									t_color stop);
-void			add_gradient_color(t_gradient const *grad, t_list **lst);
+void			add_gradient_color(t_gradient grad, t_list **lst);
 t_color			get_gradient_color(t_list *lst, double ratio);
 
 /*
@@ -74,12 +75,18 @@ t_color			get_pixel_image(t_image *image, t_pos pos);
 ** *_aa_* means "antialised", and slow :)
 */
 void			draw_line(t_image *image, t_pos a, t_pos b, t_color color);
-void			draw_line_aa(t_image *image, t_pos a, t_pos b, t_color color);
+void			draw_line_aa(t_image *image, t_pos a, t_pos b, t_list *gradlst);
 void			draw_line_gradient();
 void			draw_line_aa_gradient();
 
 /*
-** 		HAPES
+**		TEXT
 */
+#pragma message("text todo")
+
+/*
+** 		SHAPES
+*/
+#pragma message("shapes todo")
 
 #endif

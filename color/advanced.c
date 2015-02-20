@@ -6,7 +6,7 @@
 /*   By: crenault <crenault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/20 22:52:54 by crenault          #+#    #+#             */
-/*   Updated: 2015/02/20 23:21:11 by crenault         ###   ########.fr       */
+/*   Updated: 2015/02/21 00:18:09 by crenault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ t_gradient		get_new_gradient(double min, double max, t_color start,
 	return (gradient);
 }
 
-void			add_gradient_color(t_gradient const *grad, t_list **lst)
+void			add_gradient_color(t_gradient grad, t_list **lst)
 {
-	ft_lstpush(lst, ft_lstnew(grad, sizeof(t_gradient)));
+	ft_lstpush(lst, ft_lstnew(&grad, sizeof(t_gradient)));
 }
 
 t_color			get_gradient_color(t_list *lst, double ratio)
