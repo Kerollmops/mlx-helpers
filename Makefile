@@ -6,7 +6,7 @@
 #    By: crenault <crenault@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/01/17 18:24:11 by crenault          #+#    #+#              #
-#    Updated: 2015/02/20 11:57:47 by crenault         ###   ########.fr        #
+#    Updated: 2015/02/21 11:17:41 by crenault         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,10 +23,11 @@ SRC = 	main.c \
 		color/basics.c \
 		color/advanced.c \
 		image/basics.c \
-		line/basics.c
+		line/basics.c \
+		tests/line/basics.c
 
 OBJS = $(SRC:.c=.o)
-HDR = $(NAME).h
+HDR = $(NAME).h tests/tests.h
 
 all: $(NAME)
 

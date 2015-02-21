@@ -6,7 +6,7 @@
 /*   By: crenault <crenault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/20 21:23:30 by crenault          #+#    #+#             */
-/*   Updated: 2015/02/21 00:17:58 by crenault         ###   ########.fr       */
+/*   Updated: 2015/02/21 15:59:44 by crenault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ t_image			get_new_image(void *mlx, int width, int height);
 // alternative: t_image *image, int const *x, int const *y, t_color const *color
 void			put_pixel_image(t_image *image, t_pos pos, t_color color);
 t_color			get_pixel_image(t_image *image, t_pos pos);
+void			clear_image(t_image *image);
 
 /*
 **		LINES
@@ -75,9 +76,13 @@ t_color			get_pixel_image(t_image *image, t_pos pos);
 ** *_aa_* means "antialised", and slow :)
 */
 void			draw_line(t_image *image, t_pos a, t_pos b, t_color color);
-void			draw_line_aa(t_image *image, t_pos a, t_pos b, t_list *gradlst);
-void			draw_line_gradient();
-void			draw_line_aa_gradient();
+void			draw_line_gradient(t_image *img, t_pos a, t_pos b, t_list *lst);
+
+/*
+** line/advanced.c
+*/
+void			draw_line_aa(t_image *image, t_pos a, t_pos b, t_color color);
+void			draw_line_aa_gradient(t_image *i, t_pos a, t_pos b, t_list *l);
 
 /*
 **		TEXT

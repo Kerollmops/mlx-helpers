@@ -6,7 +6,7 @@
 /*   By: crenault <crenault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/20 21:43:16 by crenault          #+#    #+#             */
-/*   Updated: 2015/02/20 23:35:00 by crenault         ###   ########.fr       */
+/*   Updated: 2015/02/21 11:38:29 by crenault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,4 +64,9 @@ t_color			get_pixel_image(t_image *image, t_pos p)
 	#pragma message("if debug(define) then display error on cerr")
 	ft_putendl_fd("get_pixel_image: out of image", 2);
 	return (color);
+}
+
+void			clear_image(t_image *image)
+{
+	ft_bzero(image->data, (image->width + 32) * image->height * 4);
 }
