@@ -6,12 +6,14 @@
 /*   By: crenault <crenault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/20 21:23:30 by crenault          #+#    #+#             */
-/*   Updated: 2015/02/21 15:59:44 by crenault         ###   ########.fr       */
+/*   Updated: 2015/02/21 19:40:16 by crenault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MLX_HELPERS_H
 # define MLX_HELPERS_H
+
+# define MLX_HELPER_DEBUG 1
 
 # include "structs.h"
 
@@ -24,6 +26,25 @@
 #pragma message("to delete libft ???")
 # include "libft/includes/libft.h"
 
+#pragma message("manage alpha values with coor and images")
+#pragma message("create classic and boosted lib")
+
+/*
+** basics / advanced / complex / extra_complex / hardcore
+*/
+
+/*
+**		HELPERS
+**
+** helpers/basics.c
+*/
+void			swap(void *a, void *b);
+
+#pragma message("change folder")
+int				int_part(double a);
+double			floor_part(double a);
+double			reverse_floor_part(double a);
+
 /*
 **		POSITION
 **
@@ -31,6 +52,8 @@
 */
 t_pos			get_new_pos(int x, int y);
 double			get_pos_distance(t_pos a, t_pos b);
+t_dblpos		get_new_dbl_pos(int x, int y);
+double			get_pos_dbl_distance(t_dblpos a, t_dblpos b);
 
 /*
 **		COLOR
@@ -38,9 +61,8 @@ double			get_pos_distance(t_pos a, t_pos b);
 ** color/basics.c
 */
 t_color			get_new_color(uchar r, uchar g, uchar b);
-#pragma message("better add color in place of rgb ?")
-void			add_color(uchar r, uchar g, uchar b, t_color *out);
-void			sub_color(uchar r, uchar g, uchar b, t_color *out);
+t_color			add_color(t_color in, t_color add);
+t_color			sub_color(t_color in, t_color add);
 t_color			color_hexa(int hexa);
 
 /*
@@ -51,6 +73,12 @@ t_gradient		get_new_gradient(double min, double max, t_color start,
 									t_color stop);
 void			add_gradient_color(t_gradient grad, t_list **lst);
 t_color			get_gradient_color(t_list *lst, double ratio);
+#pragma message("destroy linked list")
+/*
+	loop for each node in list:
+		ft_lstdel(t_list **alst, void (*del)(void *, size_t))
+		ft_lstfree(void *ptr, size_t size)
+*/
 
 /*
 ** color/complex.c

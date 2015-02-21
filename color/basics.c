@@ -6,7 +6,7 @@
 /*   By: crenault <crenault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/20 21:42:32 by crenault          #+#    #+#             */
-/*   Updated: 2015/02/20 23:21:14 by crenault         ###   ########.fr       */
+/*   Updated: 2015/02/21 18:52:04 by crenault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,24 +22,32 @@ t_color			get_new_color(uchar r, uchar g, uchar b)
 	return (color);
 }
 
-void			add_color(uchar r, uchar g, uchar b, t_color *out)
+t_color			add_color(t_color in, t_color add)
 {
-	r = (out->r > (255 - r)) ? 255 - out->r : r;
-	g = (out->g > (255 - g)) ? 255 - out->g : g;
-	b = (out->b > (255 - b)) ? 255 - out->b : b;
-	out->r += r;
-	out->g += g;
-	out->b += b;
+	t_color		out;
+
+	out = in;
+	add.r = (in.r > (255 - add.r)) ? 255 - in.r : add.r;
+	add.g = (in.g > (255 - add.g)) ? 255 - in.g : add.g;
+	add.b = (in.b > (255 - add.b)) ? 255 - in.b : add.b;
+	out.r += add.r;
+	out.g += add.g;
+	out.b += add.b;
+	return (out);
 }
 
-void			sub_color(uchar r, uchar g, uchar b, t_color *out)
+t_color			sub_color(t_color in, t_color add)
 {
-	r = (r > (255 - out->r)) ? out->r : r;
-	g = (g > (255 - out->g)) ? out->g : g;
-	b = (b > (255 - out->b)) ? out->b : b;
-	out->r -= r;
-	out->g -= g;
-	out->b -= b;
+	t_color		out;
+
+	out = in;
+	add.r = (add.r > (255 - in.r)) ? in.r : add.r;
+	add.g = (add.g > (255 - in.g)) ? in.g : add.g;
+	add.b = (add.b > (255 - in.b)) ? in.b : add.b;
+	out.r -= add.r;
+	out.g -= add.g;
+	out.b -= add.b;
+	return (out);
 }
 
 t_color			color_hexa(int hexa)

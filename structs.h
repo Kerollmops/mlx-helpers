@@ -6,7 +6,7 @@
 /*   By: crenault <crenault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/20 21:33:03 by crenault          #+#    #+#             */
-/*   Updated: 2015/02/20 23:12:16 by crenault         ###   ########.fr       */
+/*   Updated: 2015/02/21 18:35:24 by crenault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,5 +65,15 @@ typedef struct			s_pos
 	int					y;
 
 }						t_pos;
+
+/*
+** position with double composants structure
+*/
+typedef struct			s_dblpos
+{
+	double				x;
+	double				y;
+
+}						t_dblpos;
 
 #endif

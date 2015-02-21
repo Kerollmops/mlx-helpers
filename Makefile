@@ -19,12 +19,24 @@ LIBMLX = -L/Users/crenault/Downloads/minilibx -lmlx -L/usr/X11/lib -lXext -lX11
 
 NAME = mlx_helpers
 SRC = 	main.c \
+		helpers/basics.c \
+		\
 		position/basics.c \
+		\
 		color/basics.c \
 		color/advanced.c \
+		\
 		image/basics.c \
+		\
 		line/basics.c \
-		tests/line/basics.c
+		line/advanced.c \
+		\
+		\
+		\
+		tests/line/basics.c \
+		tests/line/advanced.c \
+		\
+		tests/image/basics.c
 
 OBJS = $(SRC:.c=.o)
 HDR = $(NAME).h tests/tests.h

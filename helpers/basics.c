@@ -1,30 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   advanced.c                                         :+:      :+:    :+:   */
+/*   basics.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: crenault <crenault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/21 16:01:39 by crenault          #+#    #+#             */
-/*   Updated: 2015/02/21 19:14:30 by crenault         ###   ########.fr       */
+/*   Created: 2015/02/21 18:38:51 by crenault          #+#    #+#             */
+/*   Updated: 2015/02/21 19:07:20 by crenault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../tests.h"
+#include "../mlx_helpers.h"
 
-void				draw_aa_unicolor_line(t_image *image)
+void			swap(void *a, void *b)
 {
-	draw_line_aa(	image,
-					get_new_pos(10, 80), get_new_pos(50, 140),
-					get_new_color(255, 255, 255));	// white
+	void		*tmp;
+
+	tmp = a;
+	a = b;
+	b = tmp;
 }
 
-void				draw_aa_gradient_line(t_image *image)
+int				int_part(double a)
 {
-	(void)image;
+	return (a);
 }
 
-void				draw_aa_multicolor_line(t_image *image)
+double			floor_part(double a)
 {
-	(void)image;
+	return (a - int_part(a));
 }
+
+double			reverse_floor_part(double a)
+{
+	return (1.0 - floor_part(a));
+}
+
