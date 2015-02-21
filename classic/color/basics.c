@@ -6,11 +6,11 @@
 /*   By: crenault <crenault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/20 21:42:32 by crenault          #+#    #+#             */
-/*   Updated: 2015/02/21 21:56:42 by crenault         ###   ########.fr       */
+/*   Updated: 2015/02/22 00:10:53 by crenault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../mlx_helpers.h"
+# include "../../mlx_helpers.h"
 
 t_color			get_new_color(float r, float g, float b, float alpha)
 {

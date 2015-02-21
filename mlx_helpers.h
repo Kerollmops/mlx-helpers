@@ -6,33 +6,34 @@
 /*   By: crenault <crenault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/20 21:23:30 by crenault          #+#    #+#             */
-/*   Updated: 2015/02/21 22:25:24 by crenault         ###   ########.fr       */
+/*   Updated: 2015/02/22 00:12:16 by crenault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MLX_HELPERS_H
 # define MLX_HELPERS_H
 
-# define MLX_HELPER_DEBUG 1
+# define MLX_HELPERS_DEBUG 1
 
 # include "structs.h"
+# include <mlx.h>
 
 #pragma message("delete printf")
 # include <stdio.h>
-
-#pragma message("delete mlx include")
-# include <mlx.h>
 
 #pragma message("to delete libft ???")
 # include "libft/includes/libft.h"
 
 #pragma message("manage alpha better !!!")
+#pragma message("manage bezier curves + antialiased")
 #pragma message("create classic and boosted lib")
+#pragma message("+ header for each (classic and boosted)")
 
 /*
 ** basics / advanced / complex / extra_complex / hardcore
 **
 ** http://en.cppreference.com/w/c/language/operator_precedence
+** http://goo.gl/1iF2bX
 */
 
 /*

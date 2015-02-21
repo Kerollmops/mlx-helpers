@@ -6,11 +6,11 @@
 /*   By: crenault <crenault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/20 21:43:16 by crenault          #+#    #+#             */
-/*   Updated: 2015/02/21 22:07:23 by crenault         ###   ########.fr       */
+/*   Updated: 2015/02/22 00:11:23 by crenault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../mlx_helpers.h"
+#include "../../mlx_helpers.h"
 
 t_image			get_new_image(void *mlx, int width, int height)
 {
@@ -44,7 +44,7 @@ void			put_pixel_image(t_image *image, t_pos p, t_color color)
 		image->data[i + 2] = (hex_color & 0xFF0000) >> 16;
 		return ;
 	}
-	if (MLX_HELPER_DEBUG == 1)
+	if (MLX_HELPERS_DEBUG == 1)
 		ft_putendl_fd("put_pixel_image: out of image", 2);
 }
 
@@ -66,7 +66,7 @@ t_color			get_pixel_image(t_image *image, t_pos p)
 		color.alpha = 1.0;
 		return (color);
 	}
-	if (MLX_HELPER_DEBUG == 1)
+	if (MLX_HELPERS_DEBUG == 1)
 		ft_putendl_fd("get_pixel_image: out of image", 2);
 	return (color);
 }

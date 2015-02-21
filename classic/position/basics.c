@@ -5,34 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: crenault <crenault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/21 18:38:51 by crenault          #+#    #+#             */
-/*   Updated: 2015/02/21 19:07:20 by crenault         ###   ########.fr       */
+/*   Created: 2015/02/20 23:23:33 by crenault          #+#    #+#             */
+/*   Updated: 2015/02/22 00:11:37 by crenault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../mlx_helpers.h"
+#include "../../mlx_helpers.h"
+#include <math.h>
 
-void			swap(void *a, void *b)
+t_pos			get_new_pos(int x, int y)
 {
-	void		*tmp;
+	t_pos		position;
 
-	tmp = a;
-	a = b;
-	b = tmp;
+	position.x = x;
+	position.y = y;
+	return (position);
 }
 
-int				int_part(double a)
+double			get_pos_distance(t_pos a, t_pos b)
 {
-	return (a);
+	return (sqrt(((a.x - b.x) * (a.x - b.x)) + ((a.y - b.y) * (a.y - b.y))));
 }
-
-double			floor_part(double a)
-{
-	return (a - int_part(a));
-}
-
-double			reverse_floor_part(double a)
-{
-	return (1.0 - floor_part(a));
-}
-

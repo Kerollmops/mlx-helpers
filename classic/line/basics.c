@@ -6,11 +6,11 @@
 /*   By: crenault <crenault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/20 23:07:40 by crenault          #+#    #+#             */
-/*   Updated: 2015/02/21 21:39:05 by crenault         ###   ########.fr       */
+/*   Updated: 2015/02/22 00:11:32 by crenault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../mlx_helpers.h"
+#include "../../mlx_helpers.h"
 
 #pragma message("need stdlib ???")
 #include <stdlib.h>

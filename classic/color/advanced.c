@@ -6,11 +6,11 @@
 /*   By: crenault <crenault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/20 22:52:54 by crenault          #+#    #+#             */
-/*   Updated: 2015/02/21 22:03:49 by crenault         ###   ########.fr       */
+/*   Updated: 2015/02/22 00:10:50 by crenault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../mlx_helpers.h"
+#include "../../mlx_helpers.h"
 
 t_color			get_scalar(t_color a, t_color b, double ratio)
 {
@@ -33,7 +33,7 @@ t_gradient		get_new_gradient(double min, double max, t_color start,
 	{
 		max = 1.0;
 		min = 0.0;
-		if (MLX_HELPER_DEBUG == 1)
+		if (MLX_HELPERS_DEBUG == 1)
 			ft_putstr_fd("get_new_gradient: error, min upper max", 2);
 	}
 	gradient.min = (min > 1.0) ? 1.0 : (min < 0.0) ? 0.0 : min;
