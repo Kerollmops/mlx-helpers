@@ -6,7 +6,7 @@
 /*   By: crenault <crenault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/20 21:23:30 by crenault          #+#    #+#             */
-/*   Updated: 2015/02/21 22:06:47 by crenault         ###   ########.fr       */
+/*   Updated: 2015/02/21 22:25:24 by crenault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 #pragma message("to delete libft ???")
 # include "libft/includes/libft.h"
 
-#pragma message("manage alpha values with coor and images")
+#pragma message("manage alpha better !!!")
 #pragma message("create classic and boosted lib")
 
 /*

@@ -6,7 +6,7 @@
 /*   By: crenault <crenault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/20 21:22:50 by crenault          #+#    #+#             */
-/*   Updated: 2015/02/21 21:52:55 by crenault         ###   ########.fr       */
+/*   Updated: 2015/02/21 22:40:31 by crenault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,13 @@ int				main(int argc, char const **argv)
 	/*
 	** line tests
 	*/
+	draw_aa_unicolor_line(&image);
+	draw_aa_gradient_line(&image);
+	draw_aa_multicolor_line(&image);
+	//
 	draw_unicolor_line(&image);
 	draw_gradient_line(&image);
 	draw_multicolor_line(&image);
-	//
-	draw_aa_unicolor_line(&image);
-	//draw_aa_gradient_line(&image);
-	//draw_aa_multicolor_line(&image);
 
 	//clear_image(&image);
 

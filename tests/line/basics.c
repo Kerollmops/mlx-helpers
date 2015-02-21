@@ -6,7 +6,7 @@
 /*   By: crenault <crenault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/21 11:00:43 by crenault          #+#    #+#             */
-/*   Updated: 2015/02/21 21:38:56 by crenault         ###   ########.fr       */
+/*   Updated: 2015/02/21 22:41:43 by crenault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void				draw_unicolor_line(t_image *image)
 {
 	draw_line(	image,
-				get_new_pos(10, 10), get_new_pos(10, 70),
+				get_new_pos(20, 10), get_new_pos(40, 70),
 				get_new_color(255, 255, 255, 1.0));	// white
 }
 
@@ -29,7 +29,7 @@ void				draw_gradient_line(t_image *image)
 											get_new_color(0, 0, 0, 1.0)),			// black
 						&gradient_lst);
 	draw_line_gradient(	image,
-						get_new_pos(10 + 20, 10), get_new_pos(10 + 20, 70),
+						get_new_pos(30 + 20, 10), get_new_pos(50 + 20, 70),
 						gradient_lst);
 	del_gradient_list(&gradient_lst);
 }
@@ -65,7 +65,7 @@ void				draw_multicolor_line(t_image *image)
 										),
 						&gradient_lst);
 	draw_line_gradient(	image,
-						get_new_pos(10 + 40, 10), get_new_pos(10 + 40, 70),
+						get_new_pos(40 + 40, 10), get_new_pos(60 + 40, 70),
 						gradient_lst);
 	del_gradient_list(&gradient_lst);
 }
