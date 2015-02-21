@@ -6,7 +6,7 @@
 /*   By: crenault <crenault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/20 22:52:54 by crenault          #+#    #+#             */
-/*   Updated: 2015/02/21 19:46:07 by crenault         ###   ########.fr       */
+/*   Updated: 2015/02/21 20:07:23 by crenault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,4 +71,12 @@ t_color			get_gradient_color(t_list *lst, double ratio)
 	}
 	# pragma message("don't find ratio area what to do ???")
 	return (color);
+}
+
+void			del_gradient_list(t_list **lst)
+{
+	while ((*lst) != NULL)
+	{
+		ft_lstpop(lst);
+	}
 }

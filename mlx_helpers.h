@@ -6,7 +6,7 @@
 /*   By: crenault <crenault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/20 21:23:30 by crenault          #+#    #+#             */
-/*   Updated: 2015/02/21 19:40:16 by crenault         ###   ########.fr       */
+/*   Updated: 2015/02/21 20:19:23 by crenault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@
 
 /*
 ** basics / advanced / complex / extra_complex / hardcore
+**
+** http://en.cppreference.com/w/c/language/operator_precedence
 */
 
 /*
@@ -73,12 +75,7 @@ t_gradient		get_new_gradient(double min, double max, t_color start,
 									t_color stop);
 void			add_gradient_color(t_gradient grad, t_list **lst);
 t_color			get_gradient_color(t_list *lst, double ratio);
-#pragma message("destroy linked list")
-/*
-	loop for each node in list:
-		ft_lstdel(t_list **alst, void (*del)(void *, size_t))
-		ft_lstfree(void *ptr, size_t size)
-*/
+void			del_gradient_list(t_list **lst);
 
 /*
 ** color/complex.c
