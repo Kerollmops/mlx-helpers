@@ -6,7 +6,7 @@
 /*   By: crenault <crenault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/21 18:30:10 by crenault          #+#    #+#             */
-/*   Updated: 2015/02/21 19:18:21 by crenault         ###   ########.fr       */
+/*   Updated: 2015/02/21 22:06:07 by crenault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,13 +52,13 @@ void			draw_line_aa(t_image *image, t_pos a, t_pos b, t_color color)
 		pos_tmp.y = pxl1.y;
 		perc_tmp = reverse_floor_part(end.y) * xgap;
 		put_pixel_image(image, pos_tmp,
-						get_scalar(color, get_new_color(0, 0, 0), perc_tmp)
+						get_scalar(color, get_new_color(0, 0, 0, 0.0), perc_tmp)
 						);
 
 		pos_tmp.y += 1;
 		perc_tmp = floor_part(end.y) * xgap;
 		put_pixel_image(image, pos_tmp,
-						get_scalar(color, get_new_color(0, 0, 0), perc_tmp)
+						get_scalar(color, get_new_color(0, 0, 0, 0.0), perc_tmp)
 						);
 
 		intery = end.y + gradient;
@@ -75,13 +75,13 @@ void			draw_line_aa(t_image *image, t_pos a, t_pos b, t_color color)
 		pos_tmp.y = pxl2.y;
 		perc_tmp = reverse_floor_part(end.y) * xgap;
 		put_pixel_image(image, pos_tmp,
-						get_scalar(color, get_new_color(0, 0, 0), perc_tmp)
+						get_scalar(color, get_new_color(0, 0, 0, 0.0), perc_tmp)
 						);
 
 		pos_tmp.y += 1;
 		perc_tmp = floor_part(end.y) * xgap;
 		put_pixel_image(image, pos_tmp,
-						get_scalar(color, get_new_color(0, 0, 0), perc_tmp)
+						get_scalar(color, get_new_color(0, 0, 0, 0.0), perc_tmp)
 						);
 
 		int			x;
@@ -92,13 +92,13 @@ void			draw_line_aa(t_image *image, t_pos a, t_pos b, t_color color)
 			pos_tmp.y = int_part(intery);
 			perc_tmp = reverse_floor_part(intery);
 			put_pixel_image(image, pos_tmp,
-						get_scalar(color, get_new_color(0, 0, 0), perc_tmp)
+						get_scalar(color, get_new_color(0, 0, 0, 0.0), perc_tmp)
 						);
 
 			pos_tmp.y += 1;
 			perc_tmp = floor_part(intery);
 			put_pixel_image(image, pos_tmp,
-						get_scalar(color, get_new_color(0, 0, 0), perc_tmp)
+						get_scalar(color, get_new_color(0, 0, 0, 0.0), perc_tmp)
 						);
 
 			intery += gradient;
@@ -130,13 +130,13 @@ void			draw_line_aa(t_image *image, t_pos a, t_pos b, t_color color)
 		pos_tmp.x = pxl1.x;
 		perc_tmp = reverse_floor_part(end.x) * xgap;
 		put_pixel_image(image, pos_tmp,
-						get_scalar(color, get_new_color(0, 0, 0), perc_tmp)
+						get_scalar(color, get_new_color(0, 0, 0, 0.0), perc_tmp)
 						);
 
 		pos_tmp.x += 1;
 		perc_tmp = floor_part(end.x) * xgap;
 		put_pixel_image(image, pos_tmp,
-						get_scalar(color, get_new_color(0, 0, 0), perc_tmp)
+						get_scalar(color, get_new_color(0, 0, 0, 0.0), perc_tmp)
 						);
 
 		intery = end.x + gradient;
@@ -153,13 +153,13 @@ void			draw_line_aa(t_image *image, t_pos a, t_pos b, t_color color)
 		pos_tmp.x = pxl2.x;
 		perc_tmp = reverse_floor_part(end.x) * xgap;
 		put_pixel_image(image, pos_tmp,
-						get_scalar(color, get_new_color(0, 0, 0), perc_tmp)
+						get_scalar(color, get_new_color(0, 0, 0, 0.0), perc_tmp)
 						);
 
 		pos_tmp.x += 1;
 		perc_tmp = floor_part(end.x) * xgap;
 		put_pixel_image(image, pos_tmp,
-						get_scalar(color, get_new_color(0, 0, 0), perc_tmp)
+						get_scalar(color, get_new_color(0, 0, 0, 0.0), perc_tmp)
 						);
 
 		int			x;
@@ -170,13 +170,13 @@ void			draw_line_aa(t_image *image, t_pos a, t_pos b, t_color color)
 			pos_tmp.x = int_part(intery);
 			perc_tmp = reverse_floor_part(intery);
 			put_pixel_image(image, pos_tmp,
-						get_scalar(color, get_new_color(0, 0, 0), perc_tmp)
+						get_scalar(color, get_new_color(0, 0, 0, 0.0), perc_tmp)
 						);
 
 			pos_tmp.x += 1;
 			perc_tmp = floor_part(intery);
 			put_pixel_image(image, pos_tmp,
-						get_scalar(color, get_new_color(0, 0, 0), perc_tmp)
+						get_scalar(color, get_new_color(0, 0, 0, 0.0), perc_tmp)
 						);
 
 			intery += gradient;

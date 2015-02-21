@@ -6,7 +6,7 @@
 /*   By: crenault <crenault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/20 21:43:16 by crenault          #+#    #+#             */
-/*   Updated: 2015/02/21 19:46:04 by crenault         ###   ########.fr       */
+/*   Updated: 2015/02/21 22:07:23 by crenault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,10 @@ void			put_pixel_image(t_image *image, t_pos p, t_color color)
 
 	if (p.x >= 0 && p.x < image->width && p.y >= 0 && p.y < image->height)
 	{
-		hexa = ((color.r & 0xFF) << (image->bpp >> 1)) +
-				((color.g & 0xFF) << (image->bpp >> 2)) + (color.b & 0xFF);
+		color = get_scalar(color, get_pixel_image(image, p), color.alpha);
+		hexa = (((uchar)color.r & 0xFF) << (image->bpp >> 1)) +
+				(((uchar)color.g & 0xFF) << (image->bpp >> 2))
+				+ ((uchar)color.b & 0xFF);
 		hex_color = mlx_get_color_value(image->mlx, hexa);
 		i = p.y * image->sl + (image->bpp >> 3) * p.x;
 		image->data[i] = (hex_color & 0xFF);
@@ -54,12 +56,15 @@ t_color			get_pixel_image(t_image *image, t_pos p)
 
 	// if not good return not initialized color ? or black ? or ... ?
 	// here color is not initialized
+	color.alpha = 0.0;
 	if (p.x >= 0 && p.x < image->width && p.y >= 0 && p.y < image->height)
 	{
 		i = p.y * image->sl + (image->bpp >> 3) * p.x;
-		color.r = image->data[i + 2];
-		color.g = image->data[i + 1];
-		color.b = image->data[i];
+		color.r = (uchar)image->data[i + 2];
+		color.g = (uchar)image->data[i + 1];
+		color.b = (uchar)image->data[i];
+		color.alpha = 1.0;
+		return (color);
 	}
 	if (MLX_HELPER_DEBUG == 1)
 		ft_putendl_fd("get_pixel_image: out of image", 2);

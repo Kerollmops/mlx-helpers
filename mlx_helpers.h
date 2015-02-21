@@ -6,7 +6,7 @@
 /*   By: crenault <crenault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/20 21:23:30 by crenault          #+#    #+#             */
-/*   Updated: 2015/02/21 20:19:23 by crenault         ###   ########.fr       */
+/*   Updated: 2015/02/21 22:06:47 by crenault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ double			get_pos_dbl_distance(t_dblpos a, t_dblpos b);
 **
 ** color/basics.c
 */
-t_color			get_new_color(uchar r, uchar g, uchar b);
+t_color			get_new_color(float r, float g, float b, float alpha);
 t_color			add_color(t_color in, t_color add);
 t_color			sub_color(t_color in, t_color add);
 t_color			color_hexa(int hexa);

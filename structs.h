@@ -6,7 +6,7 @@
 /*   By: crenault <crenault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/20 21:33:03 by crenault          #+#    #+#             */
-/*   Updated: 2015/02/21 18:35:24 by crenault         ###   ########.fr       */
+/*   Updated: 2015/02/21 21:51:48 by crenault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,15 @@ typedef struct			s_image
 
 /*
 ** color structure
+**
+** float: better gradients
 */
 typedef struct			s_color
 {
-	uchar				r;
-	uchar				g;
-	uchar				b;
+	float				r;
+	float				g;
+	float				b;
+	float				alpha;
 
 }						t_color;
 
