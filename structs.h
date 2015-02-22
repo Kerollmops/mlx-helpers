@@ -6,7 +6,7 @@
 /*   By: crenault <crenault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/20 21:33:03 by crenault          #+#    #+#             */
-/*   Updated: 2015/02/21 21:51:48 by crenault         ###   ########.fr       */
+/*   Updated: 2015/02/22 00:43:41 by crenault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define STRUCTS_H
 
 typedef unsigned char	uchar;
+typedef unsigned int	uint;
 
 /*
 ** image structure
@@ -72,11 +73,11 @@ typedef struct			s_pos
 /*
 ** position with double composants structure
 */
-typedef struct			s_dblpos
+typedef struct			s_fpos
 {
 	double				x;
 	double				y;
 
-}						t_dblpos;
+}						t_fpos;
 
 #endif

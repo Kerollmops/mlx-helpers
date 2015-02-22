@@ -6,7 +6,7 @@
 /*   By: crenault <crenault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/20 21:23:30 by crenault          #+#    #+#             */
-/*   Updated: 2015/02/22 00:12:16 by crenault         ###   ########.fr       */
+/*   Updated: 2015/02/22 14:45:48 by crenault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 #pragma message("to delete libft ???")
 # include "libft/includes/libft.h"
 
-#pragma message("manage alpha better !!!")
+#pragma message("norme antialised lines")
 #pragma message("manage bezier curves + antialiased")
 #pragma message("create classic and boosted lib")
 #pragma message("+ header for each (classic and boosted)")
@@ -34,6 +34,9 @@
 **
 ** http://en.cppreference.com/w/c/language/operator_precedence
 ** http://goo.gl/1iF2bX
+**
+** font type (.ttf)
+** http://stevehanov.ca/blog/index.php?id=143
 */
 
 /*
@@ -55,8 +58,14 @@ double			reverse_floor_part(double a);
 */
 t_pos			get_new_pos(int x, int y);
 double			get_pos_distance(t_pos a, t_pos b);
-t_dblpos		get_new_dbl_pos(int x, int y);
-double			get_pos_dbl_distance(t_dblpos a, t_dblpos b);
+t_fpos			get_new_fpos(float x, float y);
+double			get_pos_fdistance(t_fpos a, t_fpos b);
+/*
+** position/advanced.c
+*/
+void			add_position(t_fpos pos, t_list **lst);
+t_list			*get_pos_node(t_list *lst, size_t n);
+void			del_pos_list(t_list **lst);
 
 /*
 **		COLOR
@@ -67,7 +76,6 @@ t_color			get_new_color(float r, float g, float b, float alpha);
 t_color			add_color(t_color in, t_color add);
 t_color			sub_color(t_color in, t_color add);
 t_color			color_hexa(int hexa);
-
 /*
 ** color/advanced.c
 */
@@ -77,7 +85,6 @@ t_gradient		get_new_gradient(double min, double max, t_color start,
 void			add_gradient_color(t_gradient grad, t_list **lst);
 t_color			get_gradient_color(t_list *lst, double ratio);
 void			del_gradient_list(t_list **lst);
-
 /*
 ** color/complex.c
 */
@@ -89,7 +96,6 @@ void			del_gradient_list(t_list **lst);
 ** image/basics.c
 */
 t_image			get_new_image(void *mlx, int width, int height);
-// alternative: t_image *image, int const *x, int const *y, t_color const *color
 void			put_pixel_image(t_image *image, t_pos pos, t_color color);
 t_color			get_pixel_image(t_image *image, t_pos pos);
 void			clear_image(t_image *image);
@@ -99,16 +105,22 @@ void			clear_image(t_image *image);
 **
 ** line/basics.c
 **
-** *_aa_* means "antialised", and slow :)
+** _aa_ means "antialised"
 */
 void			draw_line(t_image *image, t_pos a, t_pos b, t_color color);
 void			draw_line_gradient(t_image *img, t_pos a, t_pos b, t_list *lst);
-
 /*
 ** line/advanced.c
 */
 void			draw_line_aa(t_image *image, t_pos a, t_pos b, t_color color);
 void			draw_line_aa_gradient(t_image *i, t_pos a, t_pos b, t_list *l);
+/*
+** line/complex.c
+*/
+void			draw_bezier(t_image *image, t_list *points, t_color color);
+void			draw_bezier_gradient(t_image *image, t_list *points, t_color c);
+void			draw_bezier_aa(t_image *image, t_list *points, t_color c);
+void			draw_bezier_aa_gradient(t_image *img, t_list *pots, t_color c);
 
 /*
 **		TEXT

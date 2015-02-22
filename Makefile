@@ -6,7 +6,7 @@
 #    By: crenault <crenault@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/01/17 18:24:11 by crenault          #+#    #+#              #
-#    Updated: 2015/02/21 11:17:41 by crenault         ###   ########.fr        #
+#    Updated: 2015/02/22 14:17:54 by crenault         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,23 +14,22 @@ CC = gcc
 FLAGS = -Wall -Wextra -Werror
 LIBFT_FOLD = libft/
 LIBFT = -L$(LIBFT_FOLD) -lft
-#LIBMLX = -L/usr/local/lib -lmlx -L/usr/X11/lib -lXext -lX11
-LIBMLX = -L/Users/crenault/Downloads/minilibx -lmlx -L/usr/X11/lib -lXext -lX11
+LIBMLX = -L/usr/local/lib -lmlx -L/usr/X11/lib -lXext -lX11
+#LIBMLX = -L/Users/crenault/Downloads/minilibx -lmlx -L/usr/X11/lib -lXext -lX11
 
 NAME = mlx_helpers
 SRC = 	main.c \
-		helpers/basics.c \
+		classic/helpers/basics.c \
 		\
-		position/basics.c \
+		classic/position/basics.c \
 		\
-		color/basics.c \
-		color/advanced.c \
+		classic/color/basics.c \
+		classic/color/advanced.c \
 		\
-		image/basics.c \
+		classic/image/basics.c \
 		\
-		line/basics.c \
-		line/advanced.c \
-		\
+		classic/line/basics.c \
+		classic/line/advanced.c \
 		\
 		\
 		tests/line/basics.c \

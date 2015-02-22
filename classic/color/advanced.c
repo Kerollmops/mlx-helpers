@@ -6,7 +6,7 @@
 /*   By: crenault <crenault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/20 22:52:54 by crenault          #+#    #+#             */
-/*   Updated: 2015/02/22 00:10:50 by crenault         ###   ########.fr       */
+/*   Updated: 2015/02/22 00:38:59 by crenault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ t_color			get_scalar(t_color a, t_color b, double ratio)
 	t_color		color;
 
 	ratio = (ratio > 1.0f) ? 1.0f : (ratio < 0.0f) ? 0.0f : ratio;
-	color.r = a.r * ratio + b.r * (1.0 - ratio);
-	color.g = a.g * ratio + b.g * (1.0 - ratio);
-	color.b = a.b * ratio + b.b * (1.0 - ratio);
+	color.r = (a.r * ratio) * a.alpha + (b.r * (1.0 - ratio)) * b.alpha;
+	color.g = (a.g * ratio) * a.alpha + (b.g * (1.0 - ratio)) * b.alpha;
+	color.b = (a.b * ratio) * a.alpha + (b.b * (1.0 - ratio)) * b.alpha;
 	color.alpha = 1.0f;
 	return (color);
 }
@@ -34,7 +34,7 @@ t_gradient		get_new_gradient(double min, double max, t_color start,
 		max = 1.0;
 		min = 0.0;
 		if (MLX_HELPERS_DEBUG == 1)
-			ft_putstr_fd("get_new_gradient: error, min upper max", 2);
+			ft_putendl_fd("get_new_gradient: error, min upper max", 2);
 	}
 	gradient.min = (min > 1.0) ? 1.0 : (min < 0.0) ? 0.0 : min;
 	gradient.max = (max > 1.0) ? 1.0 : (max < 0.0) ? 0.0 : max;

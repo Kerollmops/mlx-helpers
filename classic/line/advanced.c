@@ -6,7 +6,7 @@
 /*   By: crenault <crenault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/21 18:30:10 by crenault          #+#    #+#             */
-/*   Updated: 2015/02/22 00:11:29 by crenault         ###   ########.fr       */
+/*   Updated: 2015/02/22 14:53:34 by crenault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@ void			draw_line_aa(t_image *image, t_pos a, t_pos b, t_color color)
 
 void			draw_line_aa_gradient(t_image *i, t_pos a, t_pos b, t_list *l)
 {
-	t_dblpos		d;
-	t_dblpos		end;
-	t_dblpos		pxl1;
-	t_dblpos		pxl2;
+	t_fpos			d;
+	t_fpos			end;
+	t_fpos			pxl1;
+	t_fpos			pxl2;
 	double			xgap;
 	double			intery;
 	double			gradient;
@@ -127,6 +127,11 @@ void			draw_line_aa_gradient(t_image *i, t_pos a, t_pos b, t_list *l)
 	}
 	else
 	{
+		/*
+			HERE ALL X BECOME Y
+			http://fr.wikipedia.org/wiki/Algorithme_de_trac%C3%A9_de_segment_de_Xiaolin_Wu
+		*/
+
 		if (b.y < a.y)
 		{
 			swap(&a.y, &b.y);

@@ -6,7 +6,7 @@
 /*   By: crenault <crenault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/21 11:00:43 by crenault          #+#    #+#             */
-/*   Updated: 2015/02/21 22:41:43 by crenault         ###   ########.fr       */
+/*   Updated: 2015/02/22 00:24:56 by crenault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void				draw_unicolor_line(t_image *image)
 {
 	draw_line(	image,
 				get_new_pos(20, 10), get_new_pos(40, 70),
-				get_new_color(255, 255, 255, 1.0));	// white
+				get_new_color(255, 255, 255, 1.0));		// white
 }
 
 void				draw_gradient_line(t_image *image)
