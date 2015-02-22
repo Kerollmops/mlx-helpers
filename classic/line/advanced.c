@@ -6,7 +6,7 @@
 /*   By: crenault <crenault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/21 18:30:10 by crenault          #+#    #+#             */
-/*   Updated: 2015/02/22 18:22:59 by crenault         ###   ########.fr       */
+/*   Updated: 2015/02/22 18:46:36 by crenault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,111 +28,175 @@ void			draw_line_aa(t_image *image, t_pos a, t_pos b, t_color color)
 
 void			draw_line_aa_gradient(t_image *i, t_pos a, t_pos b, t_list *l)
 {
-	t_fpos			d;
-	t_fpos			end;
-	t_fpos			pxl1;
-	t_fpos			pxl2;
-	double			xgap;
-	double			intery;
-	double			gradient;
-	double			dist;
-	double			ratio;
+	t_fpos		d;
+	t_fpos		end;
+	t_fpos		pxl1;
+	t_fpos		pxl2;
+	float		xgap;
+	double		gradient;
+	double		intery;
+	double		ratio;
+	double		dist;
+	t_pos		pos_tmp;
 
+	dist = get_pos_distance(a, b);
 	int steep = abs(b.y - a.y) > abs(b.x - a.x);
 
-	if (steep) {
-
+	if (steep)
+	{
 		swap(&a.x, &a.y);
 		swap(&b.x, &b.y);
 	}
-	if (a.x > b.x) {
-
+	if (a.x > b.x)
+	{
 		swap(&a.x, &b.x);
 		swap(&a.y, &b.y);
 	}
 
-	dist = get_pos_distance(a, b);
 	d.x = b.x - a.x;
 	d.y = b.y - a.y;
-
 	gradient = d.y / d.x;
 
+	// handle first endpoint
 	end.x = round(a.x);
 	end.y = a.y + gradient * (end.x - a.x);
-
 	xgap = reverse_floor_part(a.x + 0.5);
-
-	pxl1.x = end.x;
+	pxl1.x = end.x; // this will be used in the main loop
 	pxl1.y = int_part(end.y);
+	if (steep)
+	{
+		//plot(pxl1.y, pxl1.x, reverse_floor_part(end.y) * xgap);
+		pos_tmp = get_new_pos(pxl1.y, pxl1.x);
+		ratio = get_pos_distance(pos_tmp, b) / dist;
+		put_pixel_image(i, pos_tmp,
+						get_scalar(get_gradient_color(l, ratio),
+						get_pixel_image(i, pos_tmp),
+						reverse_floor_part(end.y) * xgap)
+						);
 
-	t_pos		pos_tmp;
-	double		perc_tmp;
-	pos_tmp.x = pxl1.x;
-	pos_tmp.y = pxl1.y;
-	perc_tmp = reverse_floor_part(end.y) * xgap;
-	ratio = get_pos_distance(pos_tmp, b) / dist;
-	put_pixel_image(i, pos_tmp,
-					get_scalar(get_gradient_color(l, ratio),
-					get_pixel_image(i, pos_tmp), perc_tmp)
-					);
+		//plot(pxl1.y + 1, pxl1.x, floor_part(end.y) * xgap);
+		pos_tmp = get_new_pos(pxl1.y + 1, pxl1.x);
+		ratio = get_pos_distance(pos_tmp, b) / dist;
+		put_pixel_image(i, pos_tmp,
+						get_scalar(get_gradient_color(l, ratio),
+						get_pixel_image(i, pos_tmp),
+						floor_part(end.y) * xgap)
+						);
+	}
+	else
+	{
+		//plot(pxl1.x, pxl1.y , reverse_floor_part(end.y) * xgap);
+		pos_tmp = get_new_pos(pxl1.y, pxl1.x);
+		ratio = get_pos_distance(pos_tmp, b) / dist;
+		put_pixel_image(i, pos_tmp,
+						get_scalar(get_gradient_color(l, ratio),
+						get_pixel_image(i, pos_tmp),
+						reverse_floor_part(end.y) * xgap)
+						);
 
-	pos_tmp.y += 1;
-	perc_tmp = floor_part(end.y) * xgap;
-	ratio = get_pos_distance(pos_tmp, b) / dist;
-	put_pixel_image(i, pos_tmp,
-					get_scalar(get_gradient_color(l, ratio),
-					get_pixel_image(i, pos_tmp), perc_tmp)
-					);
+		//plot(pxl1.x, pxl1.y + 1, floor_part(end.y) * xgap);
+		pos_tmp = get_new_pos(pxl1.y, pxl1.x + 1);
+		ratio = get_pos_distance(pos_tmp, b) / dist;
+		put_pixel_image(i, pos_tmp,
+						get_scalar(get_gradient_color(l, ratio),
+						get_pixel_image(i, pos_tmp),
+						floor_part(end.y) * xgap)
+						);
+	}
+	intery = end.y + gradient; // first y-intersection for the main loop
 
-	intery = end.y + gradient;
-
+	// handle second endpoint
 	end.x = round(b.x);
 	end.y = b.y + gradient * (end.x - b.x);
-	double		tmp_fp;
-	tmp_fp = b.x + 0.5;
-	xgap = floor_part(tmp_fp);
-	pxl2.x = end.x;
+	xgap = floor_part(b.x + 0.5);
+	pxl2.x = end.x; //this will be used in the main loop
 	pxl2.y = int_part(end.y);
-
-	pos_tmp.x = pxl2.x;
-	pos_tmp.y = pxl2.y;
-	perc_tmp = reverse_floor_part(end.y) * xgap;
-	ratio = get_pos_distance(pos_tmp, b) / dist;
-	put_pixel_image(i, pos_tmp,
-					get_scalar(get_gradient_color(l, ratio),
-					get_pixel_image(i, pos_tmp), perc_tmp)
-					);
-
-	pos_tmp.y += 1;
-	perc_tmp = floor_part(end.y) * xgap;
-	ratio = get_pos_distance(pos_tmp, b) / dist;
-	put_pixel_image(i, pos_tmp,
-					get_scalar(get_gradient_color(l, ratio),
-					get_pixel_image(i, pos_tmp), perc_tmp)
-					);
-
-	int			x;
-	x = pxl1.x + 1;
-	while (x <= (int)(pxl2.x - 1))
+	if (steep)
 	{
-		pos_tmp.x = x;
-		pos_tmp.y = int_part(intery);
-		perc_tmp = reverse_floor_part(intery);
+		//plot(pxl2.y, pxl2.x, reverse_floor_part(end.y) * xgap);
+		pos_tmp = get_new_pos(pxl2.y, pxl2.x);
 		ratio = get_pos_distance(pos_tmp, b) / dist;
 		put_pixel_image(i, pos_tmp,
 						get_scalar(get_gradient_color(l, ratio),
-						get_pixel_image(i, pos_tmp), perc_tmp)
-					);
+						get_pixel_image(i, pos_tmp),
+						reverse_floor_part(end.y) * xgap)
+						);
 
-		pos_tmp.y += 1;
-		perc_tmp = floor_part(intery);
+		//plot(pxl2.y+1, pxl2.x, floor_part(end.y) * xgap);
+		pos_tmp = get_new_pos(pxl2.y + 1, pxl2.x);
 		ratio = get_pos_distance(pos_tmp, b) / dist;
 		put_pixel_image(i, pos_tmp,
 						get_scalar(get_gradient_color(l, ratio),
-						get_pixel_image(i, pos_tmp), perc_tmp)
-					);
+						get_pixel_image(i, pos_tmp),
+						floor_part(end.y) * xgap)
+						);
+	}
+	else
+	{
+		//plot(pxl2.x, pxl2.y, reverse_floor_part(end.y) * xgap);
+		pos_tmp = get_new_pos(pxl2.x, pxl2.y);
+		ratio = get_pos_distance(pos_tmp, b) / dist;
+		put_pixel_image(i, pos_tmp,
+						get_scalar(get_gradient_color(l, ratio),
+						get_pixel_image(i, pos_tmp),
+						reverse_floor_part(end.y) * xgap)
+						);
 
-		intery += gradient;
+		//plot(pxl2.x, pxl2.y + 1, floor_part(end.y) * xgap);
+		pos_tmp = get_new_pos(pxl2.x, pxl2.y + 1);
+		ratio = get_pos_distance(pos_tmp, b) / dist;
+		put_pixel_image(i, pos_tmp,
+						get_scalar(get_gradient_color(l, ratio),
+						get_pixel_image(i, pos_tmp),
+						floor_part(end.y) * xgap)
+						);
+	}
+
+	// main loop
+	int x = pxl1.x + 1;
+	while (x < pxl2.x - 1)
+	{
+		if (steep)
+		{
+			//plot(int_part(intery) , x, reverse_floor_part(intery));
+			pos_tmp = get_new_pos(int_part(intery), x);
+			ratio = get_pos_distance(pos_tmp, b) / dist;
+			put_pixel_image(i, pos_tmp,
+							get_scalar(get_gradient_color(l, ratio),
+							get_pixel_image(i, pos_tmp),
+							reverse_floor_part(end.y) * xgap)
+							);
+
+			//plot(int_part(intery) + 1, x, floor_part(intery));
+			pos_tmp = get_new_pos(int_part(intery) + 1, x);
+			ratio = get_pos_distance(pos_tmp, b) / dist;
+			put_pixel_image(i, pos_tmp,
+							get_scalar(get_gradient_color(l, ratio),
+							get_pixel_image(i, pos_tmp),
+							floor_part(end.y) * xgap)
+							);
+		}
+		else
+		{
+			//plot(x, int_part(intery), reverse_floor_part(intery));
+			pos_tmp = get_new_pos(x, int_part(intery));
+			ratio = get_pos_distance(pos_tmp, b) / dist;
+			put_pixel_image(i, pos_tmp,
+							get_scalar(get_gradient_color(l, ratio),
+							get_pixel_image(i, pos_tmp),
+							reverse_floor_part(end.y) * xgap)
+							);
+
+			//plot(x, int_part(intery) + 1, floor_part(intery));
+			pos_tmp = get_new_pos(x, int_part(intery) + 1);
+			ratio = get_pos_distance(pos_tmp, b) / dist;
+			put_pixel_image(i, pos_tmp,
+							get_scalar(get_gradient_color(l, ratio),
+							get_pixel_image(i, pos_tmp),
+							floor_part(end.y) * xgap)
+							);
+		}
+		intery = intery + gradient;
 		x++;
 	}
 }
