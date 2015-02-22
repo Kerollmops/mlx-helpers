@@ -6,7 +6,7 @@
 /*   By: crenault <crenault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/20 21:23:30 by crenault          #+#    #+#             */
-/*   Updated: 2015/02/22 17:37:52 by crenault         ###   ########.fr       */
+/*   Updated: 2015/02/23 00:13:06 by crenault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@
 **
 ** helpers/basics.c
 */
-void			swap(void *a, void *b);
+void			swap_int(int *a, int *b);
 
 #pragma message("change folder")
 int				int_part(double a);

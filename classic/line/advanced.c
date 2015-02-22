@@ -6,7 +6,7 @@
 /*   By: crenault <crenault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/21 18:30:10 by crenault          #+#    #+#             */
-/*   Updated: 2015/02/22 23:49:21 by crenault         ###   ########.fr       */
+/*   Updated: 2015/02/23 00:13:23 by crenault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void			draw_line_aa(t_image *image, t_pos a, t_pos b, t_color color)
 	draw_line_aa_gradient(image, a, b, &gradient_lst);
 }
 
+// http://members.chello.at/easyfilter/bresenham.html
 void			draw_line_aa_gradient(t_image *i, t_pos a, t_pos b, t_list *l)
 {
 	t_fpos		d;
@@ -58,8 +59,8 @@ void			draw_line_aa_gradient(t_image *i, t_pos a, t_pos b, t_list *l)
 	{
 		if (b.x < a.x)
 		{
-			swap(&a.x, &b.x);
-			swap(&a.y, &b.y);
+			swap_int(&a.x, &b.x);
+			swap_int(&a.y, &b.y);
 		}
 
 		double gradient = d.y / d.x;
@@ -147,8 +148,8 @@ void			draw_line_aa_gradient(t_image *i, t_pos a, t_pos b, t_list *l)
 	{
 		if (b.y < a.y)
 		{
-			swap(&a.x, &b.x);
-			swap(&a.y, &b.y);
+			swap_int(&a.x, &b.x);
+			swap_int(&a.y, &b.y);
 		}
 
 		double gradient = d.x / d.y;
