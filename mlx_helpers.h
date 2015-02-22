@@ -6,7 +6,7 @@
 /*   By: crenault <crenault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/20 21:23:30 by crenault          #+#    #+#             */
-/*   Updated: 2015/02/22 14:45:48 by crenault         ###   ########.fr       */
+/*   Updated: 2015/02/22 16:13:20 by crenault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ void			del_pos_list(t_list **lst);
 **
 ** color/basics.c
 */
+#pragma message("limit color 255")
 t_color			get_new_color(float r, float g, float b, float alpha);
 t_color			add_color(t_color in, t_color add);
 t_color			sub_color(t_color in, t_color add);

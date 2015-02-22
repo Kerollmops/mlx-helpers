@@ -6,7 +6,7 @@
 /*   By: crenault <crenault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/21 11:00:57 by crenault          #+#    #+#             */
-/*   Updated: 2015/02/21 19:02:19 by crenault         ###   ########.fr       */
+/*   Updated: 2015/02/22 15:52:49 by crenault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,23 +20,29 @@
 **
 ** line/basics.c
 */
-void				draw_unicolor_line(t_image *image);
-void				draw_gradient_line(t_image *image);
-void				draw_multicolor_line(t_image *image);
+void				test_draw_unicolor_line(t_image *image);
+void				test_draw_gradient_line(t_image *image);
+void				test_draw_multicolor_line(t_image *image);
 /*
 ** line/advanced.c
 */
-void				draw_aa_unicolor_line(t_image *image);
-void				draw_aa_gradient_line(t_image *image);
-void				draw_aa_multicolor_line(t_image *image);
+void				test_draw_aa_unicolor_line(t_image *image);
+void				test_draw_aa_gradient_line(t_image *image);
+void				test_draw_aa_multicolor_line(t_image *image);
+/*
+** line/complex.c
+*/
+void				test_draw_bezier_unicolor(t_image *image);
+void				test_draw_bezier_gradient(t_image *image);
+void				test_draw_bezier_multicolor(t_image *image);
 
 /*
 **		IMAGE
 **
 ** image/basics.c
 */
-void				draw_pixel_5_5(t_image *image);
-void				print_pixel_5_5(t_image *image);
-void				draw_pixel_5_10(t_image *image);
+void				test_draw_pixel_5_5(t_image *image);
+void				test_print_pixel_5_5(t_image *image);
+void				test_draw_pixel_5_10(t_image *image);
 
 #endif

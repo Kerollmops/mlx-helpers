@@ -6,20 +6,20 @@
 /*   By: crenault <crenault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/21 16:01:39 by crenault          #+#    #+#             */
-/*   Updated: 2015/02/21 22:43:57 by crenault         ###   ########.fr       */
+/*   Updated: 2015/02/22 15:53:14 by crenault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../tests.h"
 
-void				draw_aa_unicolor_line(t_image *image)
+void				test_draw_aa_unicolor_line(t_image *image)
 {
 	draw_line_aa(	image,
 					get_new_pos(10, 10), get_new_pos(30, 70),
 					get_new_color(255, 255, 255, 1.0));		// white
 }
 
-void				draw_aa_gradient_line(t_image *image)
+void				test_draw_aa_gradient_line(t_image *image)
 {
 	t_list		*gradient_lst;
 
@@ -34,7 +34,7 @@ void				draw_aa_gradient_line(t_image *image)
 	del_gradient_list(&gradient_lst);
 }
 
-void				draw_aa_multicolor_line(t_image *image)
+void				test_draw_aa_multicolor_line(t_image *image)
 {
 	t_list		*gradient_lst;
 

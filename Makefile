@@ -6,7 +6,7 @@
 #    By: crenault <crenault@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/01/17 18:24:11 by crenault          #+#    #+#              #
-#    Updated: 2015/02/22 14:17:54 by crenault         ###   ########.fr        #
+#    Updated: 2015/02/22 15:57:34 by crenault         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ SRC = 	main.c \
 		classic/helpers/basics.c \
 		\
 		classic/position/basics.c \
+		classic/position/advanced.c \
 		\
 		classic/color/basics.c \
 		classic/color/advanced.c \
@@ -30,10 +31,12 @@ SRC = 	main.c \
 		\
 		classic/line/basics.c \
 		classic/line/advanced.c \
+		classic/line/complex.c \
 		\
 		\
 		tests/line/basics.c \
 		tests/line/advanced.c \
+		tests/line/complex.c \
 		\
 		tests/image/basics.c
 
