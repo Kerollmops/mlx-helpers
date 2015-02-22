@@ -6,7 +6,7 @@
 /*   By: crenault <crenault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/21 11:24:17 by crenault          #+#    #+#             */
-/*   Updated: 2015/02/22 17:52:18 by crenault         ###   ########.fr       */
+/*   Updated: 2015/02/22 18:09:53 by crenault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void				test_print_pixel_5_5(t_image *image)
 {
 	t_color		color;
 
-	color = get_pixel_image(image, get_new_pos(20, 20));
+	color = get_pixel_image(image, get_new_pos(20 + 100, 20));
 	printf("%f, %f, %f\n", color.r, color.g, color.b);
 }
 
