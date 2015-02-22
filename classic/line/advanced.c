@@ -6,7 +6,7 @@
 /*   By: crenault <crenault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/21 18:30:10 by crenault          #+#    #+#             */
-/*   Updated: 2015/02/22 18:46:36 by crenault         ###   ########.fr       */
+/*   Updated: 2015/02/22 23:06:37 by crenault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void			draw_line_aa_gradient(t_image *i, t_pos a, t_pos b, t_list *l)
 	t_pos		pos_tmp;
 
 	dist = get_pos_distance(a, b);
+
 	int steep = abs(b.y - a.y) > abs(b.x - a.x);
 
 	if (steep)
@@ -86,7 +87,7 @@ void			draw_line_aa_gradient(t_image *i, t_pos a, t_pos b, t_list *l)
 	else
 	{
 		//plot(pxl1.x, pxl1.y , reverse_floor_part(end.y) * xgap);
-		pos_tmp = get_new_pos(pxl1.y, pxl1.x);
+		pos_tmp = get_new_pos(pxl1.x, pxl1.y);
 		ratio = get_pos_distance(pos_tmp, b) / dist;
 		put_pixel_image(i, pos_tmp,
 						get_scalar(get_gradient_color(l, ratio),
@@ -95,7 +96,7 @@ void			draw_line_aa_gradient(t_image *i, t_pos a, t_pos b, t_list *l)
 						);
 
 		//plot(pxl1.x, pxl1.y + 1, floor_part(end.y) * xgap);
-		pos_tmp = get_new_pos(pxl1.y, pxl1.x + 1);
+		pos_tmp = get_new_pos(pxl1.x, pxl1.y + 1);
 		ratio = get_pos_distance(pos_tmp, b) / dist;
 		put_pixel_image(i, pos_tmp,
 						get_scalar(get_gradient_color(l, ratio),
@@ -164,7 +165,7 @@ void			draw_line_aa_gradient(t_image *i, t_pos a, t_pos b, t_list *l)
 			put_pixel_image(i, pos_tmp,
 							get_scalar(get_gradient_color(l, ratio),
 							get_pixel_image(i, pos_tmp),
-							reverse_floor_part(end.y) * xgap)
+							reverse_floor_part(intery))
 							);
 
 			//plot(int_part(intery) + 1, x, floor_part(intery));
@@ -173,7 +174,7 @@ void			draw_line_aa_gradient(t_image *i, t_pos a, t_pos b, t_list *l)
 			put_pixel_image(i, pos_tmp,
 							get_scalar(get_gradient_color(l, ratio),
 							get_pixel_image(i, pos_tmp),
-							floor_part(end.y) * xgap)
+							floor_part(intery))
 							);
 		}
 		else
@@ -184,7 +185,7 @@ void			draw_line_aa_gradient(t_image *i, t_pos a, t_pos b, t_list *l)
 			put_pixel_image(i, pos_tmp,
 							get_scalar(get_gradient_color(l, ratio),
 							get_pixel_image(i, pos_tmp),
-							reverse_floor_part(end.y) * xgap)
+							reverse_floor_part(intery))
 							);
 
 			//plot(x, int_part(intery) + 1, floor_part(intery));
@@ -193,7 +194,7 @@ void			draw_line_aa_gradient(t_image *i, t_pos a, t_pos b, t_list *l)
 			put_pixel_image(i, pos_tmp,
 							get_scalar(get_gradient_color(l, ratio),
 							get_pixel_image(i, pos_tmp),
-							floor_part(end.y) * xgap)
+							floor_part(intery))
 							);
 		}
 		intery = intery + gradient;

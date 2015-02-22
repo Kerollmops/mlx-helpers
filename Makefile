@@ -14,8 +14,8 @@ CC = gcc
 FLAGS = -Wall -Wextra -Werror -g
 LIBFT_FOLD = libft/
 LIBFT = -L$(LIBFT_FOLD) -lft
-LIBMLX = -L/usr/local/lib -lmlx -L/usr/X11/lib -lXext -lX11
-#LIBMLX = -L/Users/crenault/Downloads/minilibx -lmlx -L/usr/X11/lib -lXext -lX11
+#LIBMLX = -L/usr/local/lib -lmlx -L/usr/X11/lib -lXext -lX11
+LIBMLX = -L/Users/crenault/Downloads/minilibx -lmlx -L/usr/X11/lib -lXext -lX11
 
 NAME = mlx_helpers
 SRC = 	main.c \
