@@ -6,7 +6,7 @@
 /*   By: crenault <crenault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/20 22:52:54 by crenault          #+#    #+#             */
-/*   Updated: 2015/02/22 00:38:59 by crenault         ###   ########.fr       */
+/*   Updated: 2015/02/22 17:58:54 by crenault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ t_color			get_gradient_color(t_list *lst, double ratio)
 	double			perc;
 
 	color = get_new_color(0, 0, 0, 0.0f);
+	ratio = (ratio > 1.0f) ? 1.0f : (ratio < 0.0f) ? 0.0f : ratio;
 	it = lst;
 	while (it != NULL)
 	{
@@ -69,6 +70,8 @@ t_color			get_gradient_color(t_list *lst, double ratio)
 		}
 		it = it->next;
 	}
+	if (MLX_HELPERS_DEBUG == 1)
+		ft_putendl_fd("get_gradient_color: could not find color", 2);
 	return (color);
 }
 

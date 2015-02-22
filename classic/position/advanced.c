@@ -6,11 +6,20 @@
 /*   By: crenault <crenault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/22 00:30:04 by crenault          #+#    #+#             */
-/*   Updated: 2015/02/22 15:16:15 by crenault         ###   ########.fr       */
+/*   Updated: 2015/02/22 16:17:08 by crenault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../mlx_helpers.h"
+
+t_fpos				lerp(t_fpos a, t_fpos b, const double t)
+{
+	t_fpos		dest;
+
+	dest.x = a.x + (b.x - a.x) * t;
+	dest.y = a.y + (b.y - a.y) * t;
+	return (dest);
+}
 
 void			add_position(t_fpos pos, t_list **lst)
 {

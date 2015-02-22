@@ -6,7 +6,7 @@
 /*   By: crenault <crenault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/20 21:22:50 by crenault          #+#    #+#             */
-/*   Updated: 2015/02/22 15:54:22 by crenault         ###   ########.fr       */
+/*   Updated: 2015/02/22 17:50:54 by crenault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,10 @@ int				main(int argc, char const **argv)
 	test_draw_bezier_unicolor(&image);
 	test_draw_bezier_gradient(&image);
 	test_draw_bezier_multicolor(&image);
+	//
+	test_draw_bezier_aa_unicolor(&image);
+	test_draw_bezier_aa_gradient(&image);
+	test_draw_bezier_aa_multicolor(&image);
 
 	//clear_image(&image);
 

@@ -6,7 +6,7 @@
 /*   By: crenault <crenault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/21 11:00:57 by crenault          #+#    #+#             */
-/*   Updated: 2015/02/22 15:52:49 by crenault         ###   ########.fr       */
+/*   Updated: 2015/02/22 17:42:29 by crenault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,10 @@ void				test_draw_aa_multicolor_line(t_image *image);
 void				test_draw_bezier_unicolor(t_image *image);
 void				test_draw_bezier_gradient(t_image *image);
 void				test_draw_bezier_multicolor(t_image *image);
+void				test_draw_bezier_aa_unicolor(t_image *image);
+void				test_draw_bezier_aa_gradient(t_image *image);
+void				test_draw_bezier_aa_multicolor(t_image *image);
+
 
 /*
 **		IMAGE

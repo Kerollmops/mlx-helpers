@@ -6,12 +6,12 @@
 #    By: crenault <crenault@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/01/17 18:24:11 by crenault          #+#    #+#              #
-#    Updated: 2015/02/22 15:57:34 by crenault         ###   ########.fr        #
+#    Updated: 2015/02/22 17:42:59 by crenault         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -g
 LIBFT_FOLD = libft/
 LIBFT = -L$(LIBFT_FOLD) -lft
 LIBMLX = -L/usr/local/lib -lmlx -L/usr/X11/lib -lXext -lX11

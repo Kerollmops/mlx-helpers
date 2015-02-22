@@ -6,7 +6,7 @@
 /*   By: crenault <crenault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/21 18:30:10 by crenault          #+#    #+#             */
-/*   Updated: 2015/02/22 14:53:34 by crenault         ###   ########.fr       */
+/*   Updated: 2015/02/22 18:03:56 by crenault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void			draw_line_aa(t_image *image, t_pos a, t_pos b, t_color color)
 	tmp_gradient = get_new_gradient(0.0, 1.0, color, color);
 	gradient_lst.content = &tmp_gradient;
 	gradient_lst.content_size = sizeof(tmp_gradient);
+	gradient_lst.next = NULL;
 	draw_line_aa_gradient(image, a, b, &gradient_lst);
 }
 
@@ -67,14 +68,16 @@ void			draw_line_aa_gradient(t_image *i, t_pos a, t_pos b, t_list *l)
 		perc_tmp = reverse_floor_part(end.y) * xgap;
 		ratio = get_pos_distance(pos_tmp, b) / dist;
 		put_pixel_image(i, pos_tmp,
-						get_scalar(get_gradient_color(l, ratio), get_pixel_image(i, pos_tmp), perc_tmp)
+						get_scalar(get_gradient_color(l, ratio),
+						get_pixel_image(i, pos_tmp), perc_tmp)
 						);
 
 		pos_tmp.y += 1;
 		perc_tmp = floor_part(end.y) * xgap;
 		ratio = get_pos_distance(pos_tmp, b) / dist;
 		put_pixel_image(i, pos_tmp,
-						get_scalar(get_gradient_color(l, ratio), get_pixel_image(i, pos_tmp), perc_tmp)
+						get_scalar(get_gradient_color(l, ratio),
+						get_pixel_image(i, pos_tmp), perc_tmp)
 						);
 
 		intery = end.y + gradient;
@@ -92,14 +95,16 @@ void			draw_line_aa_gradient(t_image *i, t_pos a, t_pos b, t_list *l)
 		perc_tmp = reverse_floor_part(end.y) * xgap;
 		ratio = get_pos_distance(pos_tmp, b) / dist;
 		put_pixel_image(i, pos_tmp,
-						get_scalar(get_gradient_color(l, ratio), get_pixel_image(i, pos_tmp), perc_tmp)
+						get_scalar(get_gradient_color(l, ratio),
+						get_pixel_image(i, pos_tmp), perc_tmp)
 						);
 
 		pos_tmp.y += 1;
 		perc_tmp = floor_part(end.y) * xgap;
 		ratio = get_pos_distance(pos_tmp, b) / dist;
 		put_pixel_image(i, pos_tmp,
-						get_scalar(get_gradient_color(l, ratio), get_pixel_image(i, pos_tmp), perc_tmp)
+						get_scalar(get_gradient_color(l, ratio),
+						get_pixel_image(i, pos_tmp), perc_tmp)
 						);
 
 		int			x;
@@ -111,14 +116,16 @@ void			draw_line_aa_gradient(t_image *i, t_pos a, t_pos b, t_list *l)
 			perc_tmp = reverse_floor_part(intery);
 			ratio = get_pos_distance(pos_tmp, b) / dist;
 			put_pixel_image(i, pos_tmp,
-						get_scalar(get_gradient_color(l, ratio), get_pixel_image(i, pos_tmp), perc_tmp)
+							get_scalar(get_gradient_color(l, ratio),
+							get_pixel_image(i, pos_tmp), perc_tmp)
 						);
 
 			pos_tmp.y += 1;
 			perc_tmp = floor_part(intery);
 			ratio = get_pos_distance(pos_tmp, b) / dist;
 			put_pixel_image(i, pos_tmp,
-						get_scalar(get_gradient_color(l, ratio), get_pixel_image(i, pos_tmp), perc_tmp)
+							get_scalar(get_gradient_color(l, ratio),
+							get_pixel_image(i, pos_tmp), perc_tmp)
 						);
 
 			intery += gradient;
@@ -156,14 +163,16 @@ void			draw_line_aa_gradient(t_image *i, t_pos a, t_pos b, t_list *l)
 		perc_tmp = reverse_floor_part(end.x) * xgap;
 		ratio = get_pos_distance(pos_tmp, b) / dist;
 		put_pixel_image(i, pos_tmp,
-						get_scalar(get_gradient_color(l, ratio), get_pixel_image(i, pos_tmp), perc_tmp)
+						get_scalar(get_gradient_color(l, ratio),
+						get_pixel_image(i, pos_tmp), perc_tmp)
 						);
 
 		pos_tmp.x += 1;
 		perc_tmp = floor_part(end.x) * xgap;
 		ratio = get_pos_distance(pos_tmp, b) / dist;
 		put_pixel_image(i, pos_tmp,
-						get_scalar(get_gradient_color(l, ratio), get_pixel_image(i, pos_tmp), perc_tmp)
+						get_scalar(get_gradient_color(l, ratio),
+						get_pixel_image(i, pos_tmp), perc_tmp)
 						);
 
 		intery = end.x + gradient;
@@ -181,14 +190,16 @@ void			draw_line_aa_gradient(t_image *i, t_pos a, t_pos b, t_list *l)
 		perc_tmp = reverse_floor_part(end.x) * xgap;
 		ratio = get_pos_distance(pos_tmp, b) / dist;
 		put_pixel_image(i, pos_tmp,
-						get_scalar(get_gradient_color(l, ratio), get_pixel_image(i, pos_tmp), perc_tmp)
+						get_scalar(get_gradient_color(l, ratio),
+						get_pixel_image(i, pos_tmp), perc_tmp)
 						);
 
 		pos_tmp.x += 1;
 		perc_tmp = floor_part(end.x) * xgap;
 		ratio = get_pos_distance(pos_tmp, b) / dist;
 		put_pixel_image(i, pos_tmp,
-						get_scalar(get_gradient_color(l, ratio), get_pixel_image(i, pos_tmp), perc_tmp)
+						get_scalar(get_gradient_color(l, ratio),
+						get_pixel_image(i, pos_tmp), perc_tmp)
 						);
 
 		int			x;
@@ -200,15 +211,17 @@ void			draw_line_aa_gradient(t_image *i, t_pos a, t_pos b, t_list *l)
 			perc_tmp = reverse_floor_part(intery);
 			ratio = get_pos_distance(pos_tmp, b) / dist;
 			put_pixel_image(i, pos_tmp,
-						get_scalar(get_gradient_color(l, ratio), get_pixel_image(i, pos_tmp), perc_tmp)
-						);
+							get_scalar(get_gradient_color(l, ratio),
+							get_pixel_image(i, pos_tmp), perc_tmp)
+							);
 
 			pos_tmp.x += 1;
 			perc_tmp = floor_part(intery);
 			ratio = get_pos_distance(pos_tmp, b) / dist;
 			put_pixel_image(i, pos_tmp,
-						get_scalar(get_gradient_color(l, ratio), get_pixel_image(i, pos_tmp), perc_tmp)
-						);
+							get_scalar(get_gradient_color(l, ratio),
+							get_pixel_image(i, pos_tmp), perc_tmp)
+							);
 
 			intery += gradient;
 			x++;

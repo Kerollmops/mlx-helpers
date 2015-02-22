@@ -6,7 +6,7 @@
 /*   By: crenault <crenault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/20 21:23:30 by crenault          #+#    #+#             */
-/*   Updated: 2015/02/22 16:13:20 by crenault         ###   ########.fr       */
+/*   Updated: 2015/02/22 17:37:52 by crenault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ double			get_pos_fdistance(t_fpos a, t_fpos b);
 /*
 ** position/advanced.c
 */
+t_fpos			lerp(t_fpos a, t_fpos b, const double t);
 void			add_position(t_fpos pos, t_list **lst);
 t_list			*get_pos_node(t_list *lst, size_t n);
 void			del_pos_list(t_list **lst);
@@ -118,10 +119,12 @@ void			draw_line_aa_gradient(t_image *i, t_pos a, t_pos b, t_list *l);
 /*
 ** line/complex.c
 */
+void			draw_bezier_func(t_image *image, t_list *points, t_list *grads,
+									void (*f)(t_image*, t_pos, t_pos, t_color));
 void			draw_bezier(t_image *image, t_list *points, t_color color);
-void			draw_bezier_gradient(t_image *image, t_list *points, t_color c);
+void			draw_bezier_gradient(t_image *image, t_list *points, t_list *g);
 void			draw_bezier_aa(t_image *image, t_list *points, t_color c);
-void			draw_bezier_aa_gradient(t_image *img, t_list *pots, t_color c);
+void			draw_bezier_aa_gradient(t_image *img, t_list *pots, t_list *g);
 
 /*
 **		TEXT
