@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structs.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: crenault <crenault@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/20 21:33:03 by crenault          #+#    #+#             */
-/*   Updated: 2015/02/22 00:43:41 by crenault         ###   ########.fr       */
+/*   Updated: 2015/02/23 14:01:55 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,5 +79,44 @@ typedef struct			s_fpos
 	double				y;
 
 }						t_fpos;
+
+typedef struct			s_vec2
+{
+	float				x;
+	float				y;
+}						t_vec2;
+
+typedef struct			s_vec3
+{
+	float				x;
+	float				y;
+	float				z;
+}						t_vec3;
+
+typedef struct			s_quat
+{
+	float				x;
+	float				y;
+	float				z;
+	float				w;
+}						t_quat;
+
+typedef struct			s_mat4
+{
+	float				m[4][4];
+}						t_mat4;
+
+typedef struct			s_vert
+{
+	t_vec3				pos;
+	t_vec3				color;
+}						t_vert;
+
+typedef struct			s_tran
+{
+	t_vec3				pos;
+	t_vec3				scale;
+	t_quat				rot;
+}						t_tran;
 
 #endif

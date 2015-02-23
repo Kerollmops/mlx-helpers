@@ -3,14 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: crenault <crenault@student.42.fr>          +#+  +:+       +#+         #
+#    By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/01/17 18:24:11 by crenault          #+#    #+#              #
-#    Updated: 2015/02/23 10:01:48 by crenault         ###   ########.fr        #
+#    Updated: 2015/02/23 14:14:55 by rbenjami         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = gcc
+include			Makefile.sources
+
+# CC = gcc
+CC = clang
 FLAGS = -Wall -Wextra -Werror -g
 LIBFT_FOLD = libft/
 LIBFT = -L$(LIBFT_FOLD) -lft
@@ -18,27 +21,8 @@ LIBMLX = -L/usr/local/lib -lmlx -L/usr/X11/lib -lXext -lX11
 #LIBMLX = -L/Users/crenault/Downloads/minilibx -lmlx -L/usr/X11/lib -lXext -lX11
 
 NAME = mlx_helpers
-SRC = 	main.c \
-		classic/helpers/basics.c \
-		\
-		classic/position/basics.c \
-		classic/position/advanced.c \
-		\
-		classic/color/basics.c \
-		classic/color/advanced.c \
-		\
-		classic/image/basics.c \
-		\
-		classic/line/basics.c \
-		classic/line/advanced.c \
-		classic/line/complex.c \
-		\
-		\
-		tests/line/basics.c \
-		tests/line/advanced.c \
-		tests/line/complex.c \
-		\
-		tests/image/basics.c
+
+SRC +=	main.c
 
 OBJS = $(SRC:.c=.o)
 HDR = $(NAME).h tests/tests.h
