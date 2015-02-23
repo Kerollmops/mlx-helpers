@@ -6,7 +6,7 @@
 /*   By: crenault <crenault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/21 18:30:10 by crenault          #+#    #+#             */
-/*   Updated: 2015/02/23 14:09:43 by crenault         ###   ########.fr       */
+/*   Updated: 2015/02/23 16:32:27 by crenault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -204,8 +204,6 @@ void			draw_line_aa_gradient(t_image *i, t_pos a, t_pos b, t_list *l)
 
 	d.x = b.x - a.x;
 	d.y = b.y - a.y;
-
-	// if same position
 	if (a.x == b.x && a.y == b.y)
 	{
 		ratios[0] = 0.5;
