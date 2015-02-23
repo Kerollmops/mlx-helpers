@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mlx_helpers.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: crenault <crenault@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/20 21:23:30 by crenault          #+#    #+#             */
-/*   Updated: 2015/02/23 00:13:06 by crenault         ###   ########.fr       */
+/*   Updated: 2015/02/23 14:05:44 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@
 
 #pragma message("delete printf")
 # include <stdio.h>
+
+#pragma message("to delete math.h ???")
+# include <math.h>
 
 #pragma message("to delete libft ???")
 # include "libft/includes/libft.h"
@@ -125,6 +128,96 @@ void			draw_bezier(t_image *image, t_list *points, t_color color);
 void			draw_bezier_gradient(t_image *image, t_list *points, t_list *g);
 void			draw_bezier_aa(t_image *image, t_list *points, t_color c);
 void			draw_bezier_aa_gradient(t_image *img, t_list *pots, t_list *g);
+
+/*
+**		3D
+**
+**	3d/vector2f.c
+*/
+t_vec2			*new_vector2f(float x, float y);
+float			length2(t_vec2 *vec);
+float			dot2(t_vec2 *vec1, t_vec2 *vec2);
+float			cross2(t_vec2 *vec1, t_vec2 *vec2);
+t_vec2			*normalized2(t_vec2 *vec);
+t_vec2			*inv2(t_vec2 *vec);
+t_vec2			*add2v(t_vec2 *vec1, t_vec2 *vec2);
+t_vec2			*sub2v(t_vec2 *vec1, t_vec2 *vec2);
+t_vec2			*mul2v(t_vec2 *vec1, t_vec2 *vec2);
+t_vec2			*div2v(t_vec2 *vec1, t_vec2 *vec2);
+t_vec2			*add2f(t_vec2 *vec1, float value);
+t_vec2			*sub2f(t_vec2 *vec1, float value);
+t_vec2			*mul2f(t_vec2 *vec1, float value);
+t_vec2			*div2f(t_vec2 *vec1, float value);
+t_vec2			*pow2f(t_vec2 *vec1, float value);
+t_vec2			*rt2(t_vec2 *vec1);
+t_vec2			*rotate2(t_vec2 *vec, float angle);
+float			get_value2(t_vec2 *vec);
+
+/*
+**	3d/vector3f.c
+*/
+t_vec3			*new_vector3f(float x, float y, float z);
+float			length3(t_vec3 *vec);
+float			dot3(t_vec3 *vec1, t_vec3 *vec2);
+t_vec3			*cross3(t_vec3 *vec1, t_vec3 *vec2);
+t_vec3			*normalized3(t_vec3 *vec);
+t_vec3			*inv3(t_vec3 *vec);
+t_vec3			*add3v(t_vec3 *vec1, t_vec3 *vec2);
+t_vec3			*sub3v(t_vec3 *vec1, t_vec3 *vec2);
+t_vec3			*mul3v(t_vec3 *vec1, t_vec3 *vec2);
+t_vec3			*div3v(t_vec3 *vec1, t_vec3 *vec2);
+t_vec3			*add3f(t_vec3 *vec1, float value);
+t_vec3			*sub3f(t_vec3 *vec1, float value);
+t_vec3			*mul3f(t_vec3 *vec1, float value);
+t_vec3			*div3f(t_vec3 *vec1, float value);
+t_vec3			*pow3f(t_vec3 *vec1, float value);
+t_vec3			*rt3(t_vec3 *vec1);
+t_vec3			*rotate3(t_vec3 *vec, t_vec3 *axis, float angle);
+t_vec3			*rotate3q(t_vec3 *vec, t_quat *rotation);
+float			get_value3(t_vec3 *vec);
+
+/*
+**	3d/matrix4f.c
+*/
+t_mat4			*new_matrix4();
+t_mat4			*mul4m(t_mat4 *m, t_mat4 *r);
+t_mat4			*init_rotation3f(float x, float y, float z);
+t_mat4			*init_translation(t_vec3 *vec);
+t_mat4			*init_rotation3v(t_vec3 *f, t_vec3 *u, t_vec3 *r);
+t_mat4			*init_scale(float x, float y, float z);
+t_mat4			*init_perspective(float a, float b, float c, float d);
+
+/*
+**	3d/quaternion.c
+*/
+t_quat			*new_quaternion4f(float x, float y, float z, float w);
+t_quat			*new_quaternion4vf(t_vec3 *axis, float angle);
+float			length4(t_quat *q);
+t_quat			*normalized4(t_quat *q);
+t_quat			*conjugate4(t_quat *q);
+t_mat4			*to_rotation_matrix(t_quat *q);
+t_quat			*mul4q(t_quat *q, t_quat *r);
+t_quat			*mul4v(t_quat *q, t_vec3 *r);
+
+/*
+**	3d/vertex.c
+*/
+t_vert			*new_vertex3f(float x, float y, float z);
+t_vert			*new_vertexp(t_vec3 pos);
+t_vert			*new_vertexpc(t_vec3 pos, t_vec3 color);
+
+/*
+**	3d/transforms.c
+*/
+t_tran			*new_transform(void);
+t_vec3			*transform(t_vec3 *v, t_mat4 *m);
+t_mat4			*get_transforms(t_tran *t);
+
+/*
+**	3d/utils.c
+*/
+float			to_radians(float angle);
+float			rt(float val);
 
 /*
 **		TEXT
