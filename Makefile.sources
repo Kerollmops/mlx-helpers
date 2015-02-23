@@ -24,12 +24,16 @@ SRC			=	classic/helpers/basics.c			\
 				classic/line/advanced.c				\
 				classic/line/complex.c				\
 				\
+				classic/text/basics.c				\
+				\
 				\
 				tests/line/basics.c					\
 				tests/line/advanced.c				\
 				tests/line/complex.c				\
 				\
 				tests/image/basics.c				\
+				\
+				tests/text/basics.c					\
 				\
 				classic/3d/utils.c					\
 				classic/3d/vector2f.c				\

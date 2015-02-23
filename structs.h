@@ -3,15 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   structs.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
+/*   By: crenault <crenault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/20 21:33:03 by crenault          #+#    #+#             */
-/*   Updated: 2015/02/23 14:01:55 by rbenjami         ###   ########.fr       */
+/*   Updated: 2015/02/23 18:21:46 by crenault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STRUCTS_H
 # define STRUCTS_H
+
+# include "libft/includes/libft.h"
 
 typedef unsigned char	uchar;
 typedef unsigned int	uint;
@@ -80,6 +82,31 @@ typedef struct			s_fpos
 
 }						t_fpos;
 
+/*
+** size structure
+*/
+typedef struct			s_size
+{
+	uint				x;
+	uint				y;
+
+}						t_size;
+
+/*
+** classic text structure
+*/
+typedef struct			s_classtext
+{
+	t_size				char_size;
+
+	uchar				list_len;
+	char				***list;
+
+}						t_classtext;
+
+/*
+**		3D
+*/
 typedef struct			s_vec2
 {
 	float				x;

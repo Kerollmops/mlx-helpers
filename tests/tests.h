@@ -6,7 +6,7 @@
 /*   By: crenault <crenault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/21 11:00:57 by crenault          #+#    #+#             */
-/*   Updated: 2015/02/22 17:42:29 by crenault         ###   ########.fr       */
+/*   Updated: 2015/02/23 17:57:49 by crenault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,15 @@ void				test_draw_bezier_aa_multicolor(t_image *image);
 **
 ** image/basics.c
 */
-void				test_draw_pixel_5_5(t_image *image);
-void				test_print_pixel_5_5(t_image *image);
-void				test_draw_pixel_5_10(t_image *image);
+void				test_draw_pixel(t_image *image);
+void				test_print_pixel(t_image *image);
+void				test_draw_pixel_2(t_image *image);
+
+/*
+**		TEXT
+**
+** text/basics.c
+*/
+void				test_display_text(t_image *image);
 
 #endif
