@@ -6,7 +6,7 @@
 #    By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/01/17 18:24:11 by crenault          #+#    #+#              #
-#    Updated: 2015/02/23 13:56:16 by rbenjami         ###   ########.fr        #
+#    Updated: 2015/02/23 14:14:55 by rbenjami         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ FLAGS = -Wall -Wextra -Werror -g
 LIBFT_FOLD = libft/
 LIBFT = -L$(LIBFT_FOLD) -lft
 LIBMLX = -L/usr/local/lib -lmlx -L/usr/X11/lib -lXext -lX11
-# LIBMLX = -L/Users/crenault/Downloads/minilibx -lmlx -L/usr/X11/lib -lXext -lX11
+#LIBMLX = -L/Users/crenault/Downloads/minilibx -lmlx -L/usr/X11/lib -lXext -lX11
 
 NAME = mlx_helpers
 
