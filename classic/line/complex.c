@@ -6,13 +6,14 @@
 /*   By: crenault <crenault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/22 00:34:58 by crenault          #+#    #+#             */
-/*   Updated: 2015/02/23 16:35:20 by crenault         ###   ########.fr       */
+/*   Updated: 2015/02/23 22:35:42 by crenault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../mlx_helpers.h"
 
 // http://cubic.org/docs/bezier.htm
+// http://members.chello.at/easyfilter/bresenham.html
 void			draw_bezier_func(t_image *image, t_list *points, t_list *grads,
 									void (*f)(t_image*, t_pos, t_pos, t_color))
 {
