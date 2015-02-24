@@ -24,6 +24,8 @@ CLASSIC_FILES = helpers/basics.c			\
 				line/advanced.c				\
 				line/complex.c				\
 				\
+				text/basics.c				\
+				\
 				3d/utils.c					\
 				\
 				3d/vec2f/vector2f.c			\

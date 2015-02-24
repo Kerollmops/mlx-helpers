@@ -6,7 +6,7 @@
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/20 21:23:30 by crenault          #+#    #+#             */
-/*   Updated: 2015/02/24 10:27:02 by rbenjami         ###   ########.fr       */
+/*   Updated: 2015/02/24 13:39:28 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -223,6 +223,8 @@ float			rt(float val);
 **		TEXT
 */
 #pragma message("text todo")
+t_classtext		get_classtext(const char *file_path);
+t_size			get_classtext_size(t_classtext *classtext, const char *text);
 
 /*
 ** 		SHAPES

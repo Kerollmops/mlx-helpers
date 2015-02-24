@@ -15,3 +15,5 @@ TESTS_FILES =	line/basics.c				\
 				line/complex.c				\
 				\
 				image/basics.c				\
+				\
+				text/basics.c				\

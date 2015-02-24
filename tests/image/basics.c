@@ -6,13 +6,13 @@
 /*   By: crenault <crenault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/21 11:24:17 by crenault          #+#    #+#             */
-/*   Updated: 2015/02/22 18:09:53 by crenault         ###   ########.fr       */
+/*   Updated: 2015/02/23 17:54:22 by crenault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../tests.h"
 
-void				test_draw_pixel_5_5(t_image *image)
+void				test_draw_pixel(t_image *image)
 {
 	t_color		color;
 
@@ -20,7 +20,7 @@ void				test_draw_pixel_5_5(t_image *image)
 	put_pixel_image(image, get_new_pos(20 + 100, 20), color);
 }
 
-void				test_print_pixel_5_5(t_image *image)
+void				test_print_pixel(t_image *image)
 {
 	t_color		color;
 
@@ -28,7 +28,7 @@ void				test_print_pixel_5_5(t_image *image)
 	printf("%f, %f, %f\n", color.r, color.g, color.b);
 }
 
-void				test_draw_pixel_5_10(t_image *image)
+void				test_draw_pixel_2(t_image *image)
 {
 	t_color			color;
 

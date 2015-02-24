@@ -6,7 +6,7 @@
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/20 21:22:50 by crenault          #+#    #+#             */
-/*   Updated: 2015/02/24 12:47:25 by rbenjami         ###   ########.fr       */
+/*   Updated: 2015/02/24 13:32:43 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ int				main(int argc, char const **argv)
 	/*
 	** image tests
 	*/
-	test_draw_pixel_5_5(&image);
-	test_print_pixel_5_5(&image);
-	test_draw_pixel_5_10(&image);
+	test_draw_pixel(&image);
+	test_print_pixel(&image);
+	test_draw_pixel_2(&image);
 
 	/*
 	** line tests
@@ -51,6 +51,8 @@ int				main(int argc, char const **argv)
 	test_draw_bezier_aa_unicolor(&image);
 	test_draw_bezier_aa_gradient(&image);
 	test_draw_bezier_aa_multicolor(&image);
+	//
+	test_display_text(&image);
 
 	//clear_image(&image);
 

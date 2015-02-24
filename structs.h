@@ -6,7 +6,7 @@
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/20 21:33:03 by crenault          #+#    #+#             */
-/*   Updated: 2015/02/24 10:26:29 by rbenjami         ###   ########.fr       */
+/*   Updated: 2015/02/24 13:36:58 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,10 +80,36 @@ typedef struct			s_fpos
 
 }						t_fpos;
 
+/*
+** size structure
+*/
+typedef struct			s_size
+{
+	uint				x;
+	uint				y;
+
+}						t_size;
+
+/*
+** classic text structure
+*/
+typedef struct			s_classtext
+{
+	t_size				char_size;
+
+	uchar				list_len;
+	char				***list;
+
+}						t_classtext;
+
+/*
+**		3D
+*/
 typedef struct			s_vec2f
 {
 	float				x;
 	float				y;
+
 }						t_vec2f;
 
 typedef struct			s_vec3f
@@ -91,6 +117,7 @@ typedef struct			s_vec3f
 	float				x;
 	float				y;
 	float				z;
+
 }						t_vec3f;
 
 typedef struct			s_quat
@@ -99,17 +126,20 @@ typedef struct			s_quat
 	float				y;
 	float				z;
 	float				w;
+
 }						t_quat;
 
 typedef struct			s_mat4
 {
 	float				m[4][4];
+
 }						t_mat4;
 
 typedef struct			s_vert
 {
 	t_vec3f				pos;
 	t_vec3f				color;
+
 }						t_vert;
 
 typedef struct			s_tran
@@ -117,6 +147,7 @@ typedef struct			s_tran
 	t_vec3f				pos;
 	t_vec3f				scale;
 	t_quat				rot;
+
 }						t_tran;
 
 #endif
