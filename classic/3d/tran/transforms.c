@@ -6,11 +6,11 @@
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/23 18:05:39 by rbenjami          #+#    #+#             */
-/*   Updated: 2015/02/23 14:08:48 by rbenjami         ###   ########.fr       */
+/*   Updated: 2015/02/24 10:26:00 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../mlx_helpers.h"
+#include "../../../mlx_helpers.h"
 
 t_tran		*new_transform(void)
 {
@@ -31,14 +31,14 @@ t_tran		*new_transform(void)
 	return (t);
 }
 
-t_vec3		*transform(t_vec3 *v, t_mat4 *m)
+t_vec3f		*transform(t_vec3f *v, t_mat4 *m)
 {
-	t_vec3	*res;
+	t_vec3f	*res;
 	float	x;
 	float	y;
 	float	z;
 
-	if ((res = (t_vec3 *)ft_memalloc(sizeof(t_vec3))) == NULL)
+	if ((res = (t_vec3f *)ft_memalloc(sizeof(t_vec3f))) == NULL)
 		return (NULL);
 	x = m->m[0][0] * v->x + m->m[0][1] * v->y + m->m[0][2] * v->z + m->m[0][3];
 	y = m->m[1][0] * v->x + m->m[1][1] * v->y + m->m[1][2] * v->z + m->m[1][3];

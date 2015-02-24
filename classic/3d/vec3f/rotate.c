@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vector3f_rotate.c                                  :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/24 16:19:46 by rbenjami          #+#    #+#             */
-/*   Updated: 2015/02/23 14:03:31 by rbenjami         ###   ########.fr       */
+/*   Updated: 2015/02/24 10:25:57 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../mlx_helpers.h"
+#include "../../../mlx_helpers.h"
 
-t_vec3	*rotate3(t_vec3 *vec, t_vec3 *axis, float angle)
+t_vec3f	*rotate3(t_vec3f *vec, t_vec3f *axis, float angle)
 {
 	float		sin_angle;
 	float		cos_angle;
@@ -25,7 +25,7 @@ t_vec3	*rotate3(t_vec3 *vec, t_vec3 *axis, float angle)
 	return (vec);
 }
 
-t_vec3	*rotate3q(t_vec3 *vec, t_quat *rotation)
+t_vec3f	*rotate3q(t_vec3f *vec, t_quat *rotation)
 {
 	t_quat	*conjugate;
 	t_quat	*w;

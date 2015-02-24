@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../mlx_helpers.h"
+#include "../../../mlx_helpers.h"
 
 t_mat4	*init_perspective(float fov, float aspect, float z_zear, float z_far)
 {

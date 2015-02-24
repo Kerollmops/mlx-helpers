@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vector2f_mul.c                                     :+:      :+:    :+:   */
+/*   add.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/02/25 11:54:07 by rbenjami          #+#    #+#             */
-/*   Updated: 2015/02/23 14:03:38 by rbenjami         ###   ########.fr       */
+/*   Created: 2014/02/24 16:29:18 by rbenjami          #+#    #+#             */
+/*   Updated: 2015/02/24 10:25:59 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../mlx_helpers.h"
+#include "../../../mlx_helpers.h"
 
-t_vec2	*mul2f(t_vec2 *vec1, float value)
+t_vec3f	*add3f(t_vec3f *vec1, float value)
 {
-	vec1->x *= value;
-	vec1->y *= value;
+	vec1->x += value;
+	vec1->y += value;
+	vec1->z += value;
 	return (vec1);
 }
 
-t_vec2	*mul2v(t_vec2 *vec1, t_vec2 *vec2)
+t_vec3f	*add3v(t_vec3f *vec1, t_vec3f *vec2)
 {
-	vec1->x *= vec2->x;
-	vec1->y *= vec2->y;
+	vec1->x += vec2->x;
+	vec1->y += vec2->y;
+	vec1->z += vec2->z;
 	return (vec1);
 }

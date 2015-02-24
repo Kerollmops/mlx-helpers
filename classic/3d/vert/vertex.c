@@ -6,11 +6,11 @@
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 10:26:16 by rbenjami          #+#    #+#             */
-/*   Updated: 2015/02/23 14:03:28 by rbenjami         ###   ########.fr       */
+/*   Updated: 2015/02/24 10:25:56 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../mlx_helpers.h"
+#include "../../../mlx_helpers.h"
 
 t_vert		*new_vertex3f(float x, float y, float z)
 {
@@ -27,7 +27,7 @@ t_vert		*new_vertex3f(float x, float y, float z)
 	return (vertex);
 }
 
-t_vert		*new_vertexp(t_vec3 pos)
+t_vert		*new_vertexp(t_vec3f pos)
 {
 	t_vert	*vertex;
 
@@ -42,7 +42,7 @@ t_vert		*new_vertexp(t_vec3 pos)
 	return (vertex);
 }
 
-t_vert		*new_vertexpc(t_vec3 pos, t_vec3 color)
+t_vert		*new_vertexpc(t_vec3f pos, t_vec3f color)
 {
 	t_vert	*vertex;
 

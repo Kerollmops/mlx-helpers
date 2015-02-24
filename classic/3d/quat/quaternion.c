@@ -6,11 +6,11 @@
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/17 13:09:33 by rbenjami          #+#    #+#             */
-/*   Updated: 2015/02/23 14:03:46 by rbenjami         ###   ########.fr       */
+/*   Updated: 2015/02/24 10:26:01 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../mlx_helpers.h"
+#include "../../../mlx_helpers.h"
 
 t_quat	*new_quaternion4f(float x, float y, float z, float w)
 {
@@ -25,7 +25,7 @@ t_quat	*new_quaternion4f(float x, float y, float z, float w)
 	return (q);
 }
 
-t_quat	*new_quaternion4vf(t_vec3 *axis, float angle)
+t_quat	*new_quaternion4vf(t_vec3f *axis, float angle)
 {
 	t_quat			*q;
 	float			sin_half_angle;

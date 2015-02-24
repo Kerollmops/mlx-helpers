@@ -6,45 +6,109 @@
 #    By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/01/17 18:24:11 by crenault          #+#    #+#              #
-#    Updated: 2015/02/23 14:14:55 by rbenjami         ###   ########.fr        #
+#    Updated: 2015/02/24 12:46:29 by rbenjami         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-include			Makefile.sources
+include			libft/Makefile.sources
+include			Makefile.classic_sources
+include			Makefile.boosted_sources
+include			Makefile.tests_sources
 
-# CC = gcc
-CC = clang
-FLAGS = -Wall -Wextra -Werror -g
-LIBFT_FOLD = libft/
-LIBFT = -L$(LIBFT_FOLD) -lft
-LIBMLX = -L/usr/local/lib -lmlx -L/usr/X11/lib -lXext -lX11
-#LIBMLX = -L/Users/crenault/Downloads/minilibx -lmlx -L/usr/X11/lib -lXext -lX11
+export	CC		=	clang
 
-NAME = mlx_helpers
+NAME			=	mlx_helpers
 
-SRC +=	main.c
+CFLAGS			=	-Wall -Wextra -Werror -O3 -g -pedantic
 
-OBJS = $(SRC:.c=.o)
-HDR = $(NAME).h tests/tests.h
+INC				+=	-I/usr/X11/include
 
-all: $(NAME)
+LIB				=	-L./libft -lft -L/usr/X11/lib -lmlx -lXext -lX11 -lm
 
-re: fclean $(NAME)
+TMP				=	$(addprefix libft/, $(LIB_SRC))
+OBJ_LIBFT		=	$(TMP:.c=.o)
 
-$(NAME): $(OBJS) $(HDR)
-	@make -C $(LIBFT_FOLD)
-	@$(CC) $(LIBMLX) $(LIBFT) -o $@ $(OBJS) $(FLAGS)
-	@echo "\0033[32m$(NAME) done !\0033[0m"
+HEAD_LIBFT		=	libft/includes/libft.h
 
-%.o: %.c
-	@$(CC) -o $@ -c $< $(FLAGS)
+all:
+	@echo "\033[31musage: make [classic, boosted]"
 
-.PHONY: clean fclean
+# ********************************** TESTS *********************************** #
+
+TESTS_SRC_DIR	=	tests
+
+TESTS_FILES		+=	main.c
+
+TESTS_SRC		=	$(addprefix $(TESTS_SRC_DIR)/, $(TESTS_FILES))
+
+TESTS_OBJ		=	$(TESTS_SRC:.c=.o)
+
+classic_test:	lib$(NAME)_classic.a $(TESTS_OBJ)
+	@$(CC) $(CFLAGS) -o classic_test $(TESTS_OBJ) $(LIB) -L./ -l$(NAME)_classic
+	@printf '\033[33mCompilation of classic_test: \033[32mSuccess \t\t\
+			\033[34m[\033[32m✔\033[34m]\033[0m\n'
+
+# boosted_test:
+
+
+# ********************************* CLASSIC ********************************** #
+
+CLASSIC_SRC_DIR	=	classic
+
+CLASSIC_FILES	+=
+
+CLASSIC_SRC		=	$(addprefix $(CLASSIC_SRC_DIR)/, $(CLASSIC_FILES))
+
+CLASSIC_OBJ		=	$(CLASSIC_SRC:.c=.o)
+
+lib$(NAME)_classic.a: libft/libft.a $(CLASSIC_OBJ)
+	@ar -rc lib$(NAME)_classic.a $(CLASSIC_OBJ)
+	@ranlib lib$(NAME)_classic.a
+	@echo ""
+	@printf '\033[33mCompilation of mlx_helpers_classic: \033[32mSuccess \t\
+			\033[34m[\033[32m✔\033[34m]\033[0m\n'
+
+classic:		lib$(NAME)_classic.a
+
+# ********************************* BOOSTED ********************************** #
+
+BOOSTED_SRC_DIR	=	boosted
+
+BOOSTED_FILES	+=
+
+BOOSTED_SRC		=	$(addprefix $(BOOSTED_SRC_DIR)/, $(BOOSTED_FILES))
+
+BOOSTED_OBJ		=	$(BOOSTED_SRC:.c=.o)
+
+lib$(NAME)_boosted.a: libft/libft.a $(BOOSTED_OBJ)
+	@ar -rc lib$(NAME)_boosted.a $(BOOSTED_OBJ)
+	@ranlib lib$(NAME)_boosted.a
+	@echo ""
+	@printf '\033[33mCompilation of mlx_helpers_boosted: \033[32mSuccess \t\
+			\033[34m[\033[32m✔\033[34m]\033[0m\n'
+
+boosted:		lib$(NAME)_boosted.a
+
+# *********************************** ALL ************************************ #
+
+libft/libft.a:	$(TMP)
+	@make -C libft
+
+%.o:			%.c
+	@echo -n _
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	@make clean -C $(LIBFT_FOLD)
-	@rm -rf $(OBJS)
+	@rm -f $(CLASSIC_OBJ)
+	@rm -f $(BOOSTED_OBJ)
+	@echo "\033[31m"Objects of $(NAME) : deleted"\033[0m"
 
-fclean: clean
-	@make fclean -C $(LIBFT_FOLD)
-	@rm -rf $(NAME)
+fclean:			clean
+	@rm -f lib$(NAME)_classic.a
+	@rm -f lib$(NAME)_boosted.a
+	@echo "\033[31m"$(NAME) : deleted"\033[0m"
+	@make fclean -C libft
+
+re:				fclean all
+
+.PHONY:			all clean fclean classic boosted re

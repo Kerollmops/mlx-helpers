@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   matrix4f_rot.c                                     :+:      :+:    :+:   */
+/*   rot.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/23 17:22:59 by rbenjami          #+#    #+#             */
-/*   Updated: 2015/02/23 14:08:01 by rbenjami         ###   ########.fr       */
+/*   Updated: 2015/02/24 10:26:01 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../mlx_helpers.h"
+#include "../../../mlx_helpers.h"
 
 static t_mat4		init_rotation_x(float x)
 {
@@ -100,7 +100,7 @@ t_mat4				*init_rotation3f(float x, float y, float z)
 	return (res);
 }
 
-t_mat4				*init_rotation3v(t_vec3 *f, t_vec3 *u, t_vec3 *r)
+t_mat4				*init_rotation3v(t_vec3f *f, t_vec3f *u, t_vec3f *r)
 {
 	t_mat4	*m;
 

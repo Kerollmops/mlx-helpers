@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vector3f_pow.c                                     :+:      :+:    :+:   */
+/*   add.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/02/25 14:52:58 by rbenjami          #+#    #+#             */
-/*   Updated: 2015/02/23 14:03:33 by rbenjami         ###   ########.fr       */
+/*   Created: 2014/02/25 11:52:40 by rbenjami          #+#    #+#             */
+/*   Updated: 2015/02/24 10:25:55 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../mlx_helpers.h"
+#include "../../../mlx_helpers.h"
 
-t_vec3	*pow3f(t_vec3 *vec1, float value)
+t_vec2f	*add2f(t_vec2f *vec1, float value)
 {
-	vec1->x = pow(vec1->x, value);
-	vec1->y = pow(vec1->y, value);
-	vec1->z = pow(vec1->z, value);
+	vec1->x += value;
+	vec1->y += value;
 	return (vec1);
 }
 
-t_vec3	*rt3(t_vec3 *vec1)
+t_vec2f	*add2v(t_vec2f *vec1, t_vec2f *vec2)
 {
-	return (mul3v(vec1, vec1));
+	vec1->x += vec2->x;
+	vec1->y += vec2->y;
+	return (vec1);
 }

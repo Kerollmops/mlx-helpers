@@ -1,0 +1,57 @@
+#******************************************************************************#
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2013/11/20 09:49:07 by rbenjami          #+#    #+#              #
+#    Updated: 2013/11/20 11:31:21 by rbenjami         ###   ########.fr        #
+#                                                                              #
+#******************************************************************************#
+
+CLASSIC_FILES = helpers/basics.c			\
+				\
+				position/basics.c			\
+				position/advanced.c			\
+				\
+				color/basics.c				\
+				color/advanced.c			\
+				\
+				image/basics.c				\
+				\
+				line/basics.c				\
+				line/advanced.c				\
+				line/complex.c				\
+				\
+				3d/utils.c					\
+				\
+				3d/vec2f/vector2f.c			\
+				3d/vec2f/add.c				\
+				3d/vec2f/sub.c				\
+				3d/vec2f/mul.c				\
+				3d/vec2f/div.c				\
+				3d/vec2f/pow.c				\
+				3d/vec2f/get.c				\
+				3d/vec2f/rotate.c			\
+				\
+				3d/vec3f/vector3f.c			\
+				3d/vec3f/add.c				\
+				3d/vec3f/sub.c				\
+				3d/vec3f/mul.c				\
+				3d/vec3f/div.c				\
+				3d/vec3f/pow.c				\
+				3d/vec3f/get.c				\
+				3d/vec3f/rotate.c			\
+				\
+				3d/quat/quaternion.c		\
+				3d/quat/mul.c				\
+				3d/quat/rotate.c			\
+				\
+				3d/mat4f/matrix4f.c			\
+				3d/mat4f/rot.c				\
+				3d/mat4f/init.c				\
+				\
+				3d/vert/vertex.c			\
+				\
+				3d/tran/transforms.c		\

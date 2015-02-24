@@ -6,7 +6,7 @@
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/20 21:33:03 by crenault          #+#    #+#             */
-/*   Updated: 2015/02/23 14:01:55 by rbenjami         ###   ########.fr       */
+/*   Updated: 2015/02/24 10:26:29 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,18 +80,18 @@ typedef struct			s_fpos
 
 }						t_fpos;
 
-typedef struct			s_vec2
+typedef struct			s_vec2f
 {
 	float				x;
 	float				y;
-}						t_vec2;
+}						t_vec2f;
 
-typedef struct			s_vec3
+typedef struct			s_vec3f
 {
 	float				x;
 	float				y;
 	float				z;
-}						t_vec3;
+}						t_vec3f;
 
 typedef struct			s_quat
 {
@@ -108,14 +108,14 @@ typedef struct			s_mat4
 
 typedef struct			s_vert
 {
-	t_vec3				pos;
-	t_vec3				color;
+	t_vec3f				pos;
+	t_vec3f				color;
 }						t_vert;
 
 typedef struct			s_tran
 {
-	t_vec3				pos;
-	t_vec3				scale;
+	t_vec3f				pos;
+	t_vec3f				scale;
 	t_quat				rot;
 }						t_tran;
 

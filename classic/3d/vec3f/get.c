@@ -1,34 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vector2f_sub.c                                     :+:      :+:    :+:   */
+/*   get.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/02/25 11:53:30 by rbenjami          #+#    #+#             */
-/*   Updated: 2015/02/23 14:03:36 by rbenjami         ###   ########.fr       */
+/*   Created: 2014/02/25 15:19:06 by rbenjami          #+#    #+#             */
+/*   Updated: 2015/02/24 10:25:59 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../mlx_helpers.h"
+#include "../../../mlx_helpers.h"
 
-t_vec2	*sub2f(t_vec2 *vec1, float value)
+float		get_value3(t_vec3f *vec)
 {
-	vec1->x -= value;
-	vec1->y -= value;
-	return (vec1);
-}
-
-t_vec2	*sub2v(t_vec2 *vec1, t_vec2 *vec2)
-{
-	vec1->x -= vec2->x;
-	vec1->y -= vec2->y;
-	return (vec1);
-}
-
-t_vec2	*inv2(t_vec2 *vec)
-{
-	vec->x = -vec->x;
-	vec->y = -vec->y;
-	return (vec);
+	return (vec->x + vec->y + vec->z);
 }

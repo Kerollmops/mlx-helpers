@@ -6,7 +6,7 @@
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/20 21:23:30 by crenault          #+#    #+#             */
-/*   Updated: 2015/02/23 14:14:11 by rbenjami         ###   ########.fr       */
+/*   Updated: 2015/02/24 10:27:02 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,47 +134,47 @@ void			draw_bezier_aa_gradient(t_image *img, t_list *pots, t_list *g);
 **
 **	3d/vector2f.c
 */
-t_vec2			*new_vector2f(float x, float y);
-float			length2(t_vec2 *vec);
-float			dot2(t_vec2 *vec1, t_vec2 *vec2);
-float			cross2(t_vec2 *vec1, t_vec2 *vec2);
-t_vec2			*normalized2(t_vec2 *vec);
-t_vec2			*inv2(t_vec2 *vec);
-t_vec2			*add2v(t_vec2 *vec1, t_vec2 *vec2);
-t_vec2			*sub2v(t_vec2 *vec1, t_vec2 *vec2);
-t_vec2			*mul2v(t_vec2 *vec1, t_vec2 *vec2);
-t_vec2			*div2v(t_vec2 *vec1, t_vec2 *vec2);
-t_vec2			*add2f(t_vec2 *vec1, float value);
-t_vec2			*sub2f(t_vec2 *vec1, float value);
-t_vec2			*mul2f(t_vec2 *vec1, float value);
-t_vec2			*div2f(t_vec2 *vec1, float value);
-t_vec2			*pow2f(t_vec2 *vec1, float value);
-t_vec2			*rt2(t_vec2 *vec1);
-t_vec2			*rotate2(t_vec2 *vec, float angle);
-float			get_value2(t_vec2 *vec);
+t_vec2f			*new_vector2f(float x, float y);
+float			length2(t_vec2f *vec);
+float			dot2(t_vec2f *vec1, t_vec2f *vec2);
+float			cross2(t_vec2f *vec1, t_vec2f *vec2);
+t_vec2f			*normalized2(t_vec2f *vec);
+t_vec2f			*inv2(t_vec2f *vec);
+t_vec2f			*add2v(t_vec2f *vec1, t_vec2f *vec2);
+t_vec2f			*sub2v(t_vec2f *vec1, t_vec2f *vec2);
+t_vec2f			*mul2v(t_vec2f *vec1, t_vec2f *vec2);
+t_vec2f			*div2v(t_vec2f *vec1, t_vec2f *vec2);
+t_vec2f			*add2f(t_vec2f *vec1, float value);
+t_vec2f			*sub2f(t_vec2f *vec1, float value);
+t_vec2f			*mul2f(t_vec2f *vec1, float value);
+t_vec2f			*div2f(t_vec2f *vec1, float value);
+t_vec2f			*pow2f(t_vec2f *vec1, float value);
+t_vec2f			*rt2(t_vec2f *vec1);
+t_vec2f			*rotate2(t_vec2f *vec, float angle);
+float			get_value2(t_vec2f *vec);
 
 /*
 **	3d/vector3f.c
 */
-t_vec3			*new_vector3f(float x, float y, float z);
-float			length3(t_vec3 *vec);
-float			dot3(t_vec3 *vec1, t_vec3 *vec2);
-t_vec3			*cross3(t_vec3 *vec1, t_vec3 *vec2);
-t_vec3			*normalized3(t_vec3 *vec);
-t_vec3			*inv3(t_vec3 *vec);
-t_vec3			*add3v(t_vec3 *vec1, t_vec3 *vec2);
-t_vec3			*sub3v(t_vec3 *vec1, t_vec3 *vec2);
-t_vec3			*mul3v(t_vec3 *vec1, t_vec3 *vec2);
-t_vec3			*div3v(t_vec3 *vec1, t_vec3 *vec2);
-t_vec3			*add3f(t_vec3 *vec1, float value);
-t_vec3			*sub3f(t_vec3 *vec1, float value);
-t_vec3			*mul3f(t_vec3 *vec1, float value);
-t_vec3			*div3f(t_vec3 *vec1, float value);
-t_vec3			*pow3f(t_vec3 *vec1, float value);
-t_vec3			*rt3(t_vec3 *vec1);
-t_vec3			*rotate3(t_vec3 *vec, t_vec3 *axis, float angle);
-t_vec3			*rotate3q(t_vec3 *vec, t_quat *rotation);
-float			get_value3(t_vec3 *vec);
+t_vec3f			*new_vector3f(float x, float y, float z);
+float			length3(t_vec3f *vec);
+float			dot3(t_vec3f *vec1, t_vec3f *vec2);
+t_vec3f			*cross3(t_vec3f *vec1, t_vec3f *vec2);
+t_vec3f			*normalized3(t_vec3f *vec);
+t_vec3f			*inv3(t_vec3f *vec);
+t_vec3f			*add3v(t_vec3f *vec1, t_vec3f *vec2);
+t_vec3f			*sub3v(t_vec3f *vec1, t_vec3f *vec2);
+t_vec3f			*mul3v(t_vec3f *vec1, t_vec3f *vec2);
+t_vec3f			*div3v(t_vec3f *vec1, t_vec3f *vec2);
+t_vec3f			*add3f(t_vec3f *vec1, float value);
+t_vec3f			*sub3f(t_vec3f *vec1, float value);
+t_vec3f			*mul3f(t_vec3f *vec1, float value);
+t_vec3f			*div3f(t_vec3f *vec1, float value);
+t_vec3f			*pow3f(t_vec3f *vec1, float value);
+t_vec3f			*rt3(t_vec3f *vec1);
+t_vec3f			*rotate3(t_vec3f *vec, t_vec3f *axis, float angle);
+t_vec3f			*rotate3q(t_vec3f *vec, t_quat *rotation);
+float			get_value3(t_vec3f *vec);
 
 /*
 **	3d/matrix4f.c
@@ -182,8 +182,8 @@ float			get_value3(t_vec3 *vec);
 t_mat4			*new_matrix4();
 t_mat4			*mul4m(t_mat4 *m, t_mat4 *r);
 t_mat4			*init_rotation3f(float x, float y, float z);
-t_mat4			*init_translation(t_vec3 *vec);
-t_mat4			*init_rotation3v(t_vec3 *f, t_vec3 *u, t_vec3 *r);
+t_mat4			*init_translation(t_vec3f *vec);
+t_mat4			*init_rotation3v(t_vec3f *f, t_vec3f *u, t_vec3f *r);
 t_mat4			*init_scale(float x, float y, float z);
 t_mat4			*init_perspective(float a, float b, float c, float d);
 
@@ -191,26 +191,26 @@ t_mat4			*init_perspective(float a, float b, float c, float d);
 **	3d/quaternion.c
 */
 t_quat			*new_quaternion4f(float x, float y, float z, float w);
-t_quat			*new_quaternion4vf(t_vec3 *axis, float angle);
+t_quat			*new_quaternion4vf(t_vec3f *axis, float angle);
 float			length4(t_quat *q);
 t_quat			*normalized4(t_quat *q);
 t_quat			*conjugate4(t_quat *q);
 t_mat4			*to_rotation_matrix(t_quat *q);
 t_quat			*mul4q(t_quat *q, t_quat *r);
-t_quat			*mul4v(t_quat *q, t_vec3 *r);
+t_quat			*mul4v(t_quat *q, t_vec3f *r);
 
 /*
 **	3d/vertex.c
 */
 t_vert			*new_vertex3f(float x, float y, float z);
-t_vert			*new_vertexp(t_vec3 pos);
-t_vert			*new_vertexpc(t_vec3 pos, t_vec3 color);
+t_vert			*new_vertexp(t_vec3f pos);
+t_vert			*new_vertexpc(t_vec3f pos, t_vec3f color);
 
 /*
 **	3d/transforms.c
 */
 t_tran			*new_transform(void);
-t_vec3			*transform(t_vec3 *v, t_mat4 *m);
+t_vec3f			*transform(t_vec3f *v, t_mat4 *m);
 t_mat4			*get_transforms(t_tran *t);
 
 /*

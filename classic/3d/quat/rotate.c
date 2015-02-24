@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   quaternion_rot.c                                   :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/23 17:20:02 by rbenjami          #+#    #+#             */
-/*   Updated: 2015/02/23 14:03:44 by rbenjami         ###   ########.fr       */
+/*   Updated: 2015/02/24 10:26:00 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../mlx_helpers.h"
+#include "../../../mlx_helpers.h"
 
 t_mat4		*to_rotation_matrix(t_quat *q)
 {
 	t_mat4	*mat;
-	t_vec3	*forward;
-	t_vec3	*up;
-	t_vec3	*right;
+	t_vec3f	*forward;
+	t_vec3f	*up;
+	t_vec3f	*right;
 	float	xyz[3];
 
 	xyz[0] = 2.0f * (q->x * q->z - q->w * q->y);
