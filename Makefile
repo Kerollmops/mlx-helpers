@@ -6,7 +6,7 @@
 #    By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/01/17 18:24:11 by crenault          #+#    #+#              #
-#    Updated: 2015/02/24 13:29:35 by rbenjami         ###   ########.fr        #
+#    Updated: 2015/02/24 13:55:02 by rbenjami         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,8 +48,8 @@ classic_test:	lib$(NAME)_classic.a $(TESTS_OBJ)
 	@printf '\033[33mCompilation of classic_test: \033[32mSuccess \t\t\
 			\033[34m[\033[32m✔\033[34m]\033[0m\n'
 
-# boosted_test:
-
+boosted_test:
+	@echo "No boosted test yet"
 
 # ********************************* CLASSIC ********************************** #
 

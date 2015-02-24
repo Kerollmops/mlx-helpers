@@ -6,11 +6,11 @@
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/24 12:24:33 by rbenjami          #+#    #+#             */
-/*   Updated: 2015/02/24 10:25:52 by rbenjami         ###   ########.fr       */
+/*   Updated: 2015/02/24 13:53:05 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../mlx_helpers.h"
+#include "../../../classic_mlx_helpers.h"
 
 t_vec2f	*new_vector2f(float x, float y)
 {

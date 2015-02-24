@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   basics.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: crenault <crenault@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/21 18:38:51 by crenault          #+#    #+#             */
-/*   Updated: 2015/02/23 00:12:38 by crenault         ###   ########.fr       */
+/*   Updated: 2015/02/24 13:52:56 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../mlx_helpers.h"
+#include "../../classic_mlx_helpers.h"
 #include <math.h>
 
 void			swap_int(int *a, int *b)

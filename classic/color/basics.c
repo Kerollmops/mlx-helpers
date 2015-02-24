@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   basics.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: crenault <crenault@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/20 21:42:32 by crenault          #+#    #+#             */
-/*   Updated: 2015/02/22 00:21:38 by crenault         ###   ########.fr       */
+/*   Updated: 2015/02/24 13:52:57 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../../mlx_helpers.h"
+# include "../../classic_mlx_helpers.h"
 
 t_color			get_new_color(float r, float g, float b, float alpha)
 {

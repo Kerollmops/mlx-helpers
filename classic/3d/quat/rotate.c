@@ -6,11 +6,11 @@
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/23 17:20:02 by rbenjami          #+#    #+#             */
-/*   Updated: 2015/02/24 10:26:00 by rbenjami         ###   ########.fr       */
+/*   Updated: 2015/02/24 13:52:52 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../mlx_helpers.h"
+#include "../../../classic_mlx_helpers.h"
 
 t_mat4		*to_rotation_matrix(t_quat *q)
 {

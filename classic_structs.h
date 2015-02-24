@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   structs.h                                          :+:      :+:    :+:   */
+/*   classic_structs.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/20 21:33:03 by crenault          #+#    #+#             */
-/*   Updated: 2015/02/24 13:36:58 by rbenjami         ###   ########.fr       */
+/*   Updated: 2015/02/24 13:49:37 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STRUCTS_H
-# define STRUCTS_H
+#ifndef CLASSIC_STRUCTS_H
+# define CLASSIC_STRUCTS_H
 
 typedef unsigned char	uchar;
 typedef unsigned int	uint;

@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mlx_helpers.h                                      :+:      :+:    :+:   */
+/*   classic_mlx_helpers.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/20 21:23:30 by crenault          #+#    #+#             */
-/*   Updated: 2015/02/24 13:39:28 by rbenjami         ###   ########.fr       */
+/*   Updated: 2015/02/24 13:53:32 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MLX_HELPERS_H
-# define MLX_HELPERS_H
+#ifndef CLASSIC_MLX_HELPERS_H
+# define CLASSIC_MLX_HELPERS_H
 
 # define MLX_HELPERS_DEBUG 1
 
-# include "structs.h"
+# include "classic_structs.h"
 # include <mlx.h>
 
 #pragma message("delete printf")

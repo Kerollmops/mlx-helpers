@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   basics.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: crenault <crenault@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/20 23:07:40 by crenault          #+#    #+#             */
-/*   Updated: 2015/02/22 17:45:54 by crenault         ###   ########.fr       */
+/*   Updated: 2015/02/24 13:52:55 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../mlx_helpers.h"
+#include "../../classic_mlx_helpers.h"
 
 #pragma message("need stdlib ???")
 #include <stdlib.h>

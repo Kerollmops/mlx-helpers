@@ -6,11 +6,11 @@
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/23 17:22:59 by rbenjami          #+#    #+#             */
-/*   Updated: 2015/02/24 10:26:01 by rbenjami         ###   ########.fr       */
+/*   Updated: 2015/02/24 13:52:53 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../mlx_helpers.h"
+#include "../../../classic_mlx_helpers.h"
 
 static t_mat4		init_rotation_x(float x)
 {

@@ -6,14 +6,14 @@
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/21 11:00:57 by crenault          #+#    #+#             */
-/*   Updated: 2015/02/24 13:33:46 by rbenjami         ###   ########.fr       */
+/*   Updated: 2015/02/24 13:51:09 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef TESTS_H
 # define TESTS_H
 
-# include "../mlx_helpers.h"
+# include "../../classic_mlx_helpers.h"
 
 /*
 **		LINE

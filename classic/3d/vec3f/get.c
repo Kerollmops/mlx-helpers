@@ -6,11 +6,11 @@
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/25 15:19:06 by rbenjami          #+#    #+#             */
-/*   Updated: 2015/02/24 10:25:59 by rbenjami         ###   ########.fr       */
+/*   Updated: 2015/02/24 13:53:03 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../mlx_helpers.h"
+#include "../../../classic_mlx_helpers.h"
 
 float		get_value3(t_vec3f *vec)
 {

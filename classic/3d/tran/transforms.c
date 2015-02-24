@@ -6,11 +6,11 @@
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/23 18:05:39 by rbenjami          #+#    #+#             */
-/*   Updated: 2015/02/24 10:26:00 by rbenjami         ###   ########.fr       */
+/*   Updated: 2015/02/24 13:52:50 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../mlx_helpers.h"
+#include "../../../classic_mlx_helpers.h"
 
 t_tran		*new_transform(void)
 {

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../mlx_helpers.h"
+#include "../../classic_mlx_helpers.h"
 #include <unistd.h>
 #include <fcntl.h>
 

@@ -6,11 +6,11 @@
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/24 15:19:24 by rbenjami          #+#    #+#             */
-/*   Updated: 2015/02/24 10:26:02 by rbenjami         ###   ########.fr       */
+/*   Updated: 2015/02/24 13:52:54 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../mlx_helpers.h"
+#include "../../../classic_mlx_helpers.h"
 
 t_mat4		*new_matrix4(void)
 {

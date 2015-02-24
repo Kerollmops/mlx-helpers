@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   complex.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: crenault <crenault@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/22 00:34:58 by crenault          #+#    #+#             */
-/*   Updated: 2015/02/23 22:35:42 by crenault         ###   ########.fr       */
+/*   Updated: 2015/02/24 13:52:54 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../mlx_helpers.h"
+#include "../../classic_mlx_helpers.h"
 
 // http://cubic.org/docs/bezier.htm
 // http://members.chello.at/easyfilter/bresenham.html

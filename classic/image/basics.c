@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   basics.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: crenault <crenault@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/20 21:43:16 by crenault          #+#    #+#             */
-/*   Updated: 2015/02/22 00:11:23 by crenault         ###   ########.fr       */
+/*   Updated: 2015/02/24 13:52:56 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../mlx_helpers.h"
+#include "../../classic_mlx_helpers.h"
 
 t_image			get_new_image(void *mlx, int width, int height)
 {

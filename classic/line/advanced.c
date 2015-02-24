@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   advanced.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: crenault <crenault@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/21 18:30:10 by crenault          #+#    #+#             */
-/*   Updated: 2015/02/23 16:32:27 by crenault         ###   ########.fr       */
+/*   Updated: 2015/02/24 13:52:55 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <math.h>
-#include "../../mlx_helpers.h"
+#include "../../classic_mlx_helpers.h"
 
 void			draw_line_aa(t_image *image, t_pos a, t_pos b, t_color color)
 {
